@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniStation Pro - El Sistema Operativo del Estudiante</title>
-    <meta name="description" content="Organiza tus materias, exámenes, archivos y tareas en un solo lugar. La herramienta definitiva para universitarios.">
+    <title>UniStation Pro - Domina tu Ingeniería</title>
+    <meta name="description" content="La suite definitiva para estudiantes de ingeniería. Organiza materias, archivos, comunidad y apuntes en una sola app offline.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Iconos -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -19,52 +19,109 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                            950: '#0f172a', // Más oscuro que gray-900
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { background-color: #0f172a; color: white; }
         
-        .hero-bg {
-            background: radial-gradient(circle at 50% 0%, #1e3a8a 0%, #111827 60%);
+        .hero-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(15, 23, 42, 0) 70%);
+        }
+        
+        .feature-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
         }
         
         .feature-card:hover {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
             border-color: rgba(59, 130, 246, 0.5);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
         }
 
-        .app-mockup {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-            border: 1px solid #374151;
+        /* Mockup CSS Puro para reflejar la App Real */
+        .app-window {
             background: #111827;
-            overflow: hidden;
+            border: 1px solid #374151;
             border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
         }
-
-        /* Scrollbars finas para el mockup */
-        .mockup-scroll::-webkit-scrollbar { width: 4px; }
-        .mockup-scroll::-webkit-scrollbar-track { background: transparent; }
-        .mockup-scroll::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
-
-        html { scroll-behavior: smooth; }
+        
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+        .sidebar-item.active {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body class="bg-gray-950 text-white antialiased overflow-x-hidden">
+<body class="antialiased overflow-x-hidden">
 
     <!-- NAV -->
-    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+    <nav class="fixed w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-2">
-                    <div class="bg-blue-600 p-1.5 rounded-lg">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-lg shadow-lg shadow-blue-900/20">
                         <i data-lucide="graduation-cap" class="text-white w-6 h-6"></i>
                     </div>
-                    <span class="font-bold text-xl tracking-tight">UniStation Pro</span>
+                    <span class="font-heading font-bold text-xl tracking-tight">UniStation Pro</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-300 hover:text-white transition-colors text-sm">Funcionalidades</a>
-                    <a href="#why" class="text-gray-300 hover:text-white transition-colors text-sm">Por qué usarla</a>
-                    <a href="#download" class="bg-white text-gray-900 hover:bg-gray-200 px-4 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105">
-                        Descargar Gratis
+                    <a href="#features" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Características</a>
+                    <a href="#careers" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Carreras</a>
+                    
+                    <a href="https://cafecito.app/nicopet" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm border border-gray-700 px-4 py-2 rounded-full hover:bg-gray-800 hover:border-yellow-500/50 group">
+                        <i data-lucide="coffee" class="w-4 h-4 text-yellow-500 group-hover:animate-bounce"></i>
+                        <span>Invítame un café</span>
+                    </a>
+
+                    <a href="#download" class="bg-white text-gray-900 hover:bg-blue-50 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+                        Descargar v1.0
                     </a>
                 </div>
             </div>
@@ -72,312 +129,269 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="hero-bg pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 relative overflow-hidden">
+    <header class="hero-glow pt-32 pb-24 lg:pt-48 lg:pb-40 px-4 relative">
         <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div data-aos="fade-up" class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-blue-400 uppercase bg-blue-900/30 rounded-full border border-blue-800">
-                v1.0 Disponible para Windows
+            
+            <div data-aos="fade-up" class="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-950/50 rounded-full border border-blue-800/50 shadow-lg shadow-blue-900/20">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Nueva Versión Estable
             </div>
-            <h1 data-aos="fade-up" data-aos-delay="100" class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                Tu Segundo Cerebro <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Universitario</span>
+
+            <h1 data-aos="fade-up" data-aos-delay="100" class="font-heading text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
+                Deja de estudiar con <br>
+                <span class="gradient-text">50 pestañas abiertas</span>
             </h1>
-            <p data-aos="fade-up" data-aos-delay="200" class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-                Deja de usar 5 apps distintas. Materias, archivos, exámenes y tareas en un solo lugar. Sin internet, sin suscripciones, sin distracciones.
+            
+            <p data-aos="fade-up" data-aos-delay="200" class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
+                UniStation Pro centraliza tus materias, archivos, correos, calendario y comunidad en una sola app potente. 
+                <strong class="text-gray-100">100% Offline first.</strong> Tus datos son tuyos.
             </p>
             
-            <div data-aos="fade-up" data-aos-delay="300" class="mt-10 flex justify-center gap-4">
-                <!-- Botón de descarga -->
-                <a href="#download" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/30 transition-all flex items-center gap-2 text-lg">
+            <div data-aos="fade-up" data-aos-delay="300" class="mt-10 flex flex-col sm:flex-row justify-center gap-4 items-center">
+                <a href="#download" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-3 text-lg hover:scale-105">
                     <i data-lucide="download"></i> Descargar para Windows
+                </a>
+                <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-gray-800/50 hover:bg-gray-800 border border-gray-700 text-gray-200 font-semibold rounded-xl transition-all flex items-center justify-center gap-2">
+                    Ver Funcionalidades
                 </a>
             </div>
 
-            <!-- MOCKUP DE ALTA FIDELIDAD (HTML/CSS) -->
-            <div data-aos="fade-up" data-aos-delay="500" class="mt-20 relative max-w-6xl mx-auto app-mockup aspect-[16/10] md:aspect-video flex text-left text-xs md:text-sm select-none">
+            <!-- MOCKUP DE LA APP (Reflejando la UI real) -->
+            <div data-aos="fade-up" data-aos-delay="500" class="mt-20 relative max-w-6xl mx-auto app-window aspect-[16/10] md:aspect-[16/9] flex text-left select-none transform md:rotate-x-12 perspective-1000">
                 
-                <!-- Sidebar simulado -->
-                <div class="w-16 md:w-64 bg-gray-900 border-r border-gray-800 p-4 flex flex-col gap-6 shrink-0">
-                    <div class="flex gap-3 items-center text-blue-500 px-2">
-                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                        <span class="font-bold text-lg text-white hidden md:block">UniStation</span>
+                <!-- Sidebar -->
+                <div class="w-16 md:w-64 bg-gray-900 border-r border-gray-800 p-4 flex flex-col gap-2 shrink-0">
+                    <div class="flex items-center gap-2 px-2 mb-6 text-blue-500">
+                        <i data-lucide="graduation-cap"></i>
+                        <span class="font-bold text-white hidden md:block">UniStation</span>
                     </div>
-                    <div class="space-y-1">
-                        <div class="flex items-center gap-3 px-3 py-2 bg-blue-600/10 text-blue-400 border border-blue-600/20 rounded-lg">
-                            <i data-lucide="layout-dashboard" class="w-4 h-4"></i> <span class="hidden md:block font-medium">Dashboard</span>
-                        </div>
-                        <div class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:bg-gray-800 rounded-lg">
-                            <i data-lucide="book-open" class="w-4 h-4"></i> <span class="hidden md:block">Materias</span>
-                        </div>
-                        <div class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:bg-gray-800 rounded-lg">
-                            <i data-lucide="check-square" class="w-4 h-4"></i> <span class="hidden md:block">Tareas</span>
-                        </div>
-                        <div class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:bg-gray-800 rounded-lg">
-                            <i data-lucide="folder" class="w-4 h-4"></i> <span class="hidden md:block">Archivos</span>
-                        </div>
-                        <div class="flex items-center gap-3 px-3 py-2 text-gray-400 hover:bg-gray-800 rounded-lg">
-                            <i data-lucide="mail" class="w-4 h-4"></i> <span class="hidden md:block">Correo</span>
-                        </div>
-                    </div>
-                    <div class="mt-auto border-t border-gray-800 pt-4 hidden md:flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-lg">🦁</div>
-                        <div>
-                            <p class="text-white font-bold text-xs">Usuario Demo</p>
-                            <p class="text-gray-500 text-[10px]">Ingeniería</p>
-                        </div>
-                    </div>
+                    
+                    <!-- Items Menú -->
+                    <div class="sidebar-item active"><i data-lucide="layout-dashboard" size="18"></i> <span class="hidden md:block">Dashboard</span></div>
+                    <div class="sidebar-item"><i data-lucide="book-open" size="18"></i> <span class="hidden md:block">Materias</span></div>
+                    <div class="sidebar-item"><i data-lucide="check-square" size="18"></i> <span class="hidden md:block">Tareas</span></div>
+                    <div class="sidebar-item"><i data-lucide="clipboard-list" size="18"></i> <span class="hidden md:block">Exámenes</span></div>
+                    <div class="sidebar-item"><i data-lucide="calendar" size="18"></i> <span class="hidden md:block">Calendario</span></div>
+                    <div class="sidebar-item"><i data-lucide="mail" size="18"></i> <span class="hidden md:block">Correo</span></div>
+                    <div class="sidebar-item"><i data-lucide="globe" size="18"></i> <span class="hidden md:block">Facultad</span></div>
+                    <div class="sidebar-item"><i data-lucide="folder" size="18"></i> <span class="hidden md:block">Archivos</span></div>
+                    <div class="sidebar-item"><i data-lucide="sticky-note" size="18"></i> <span class="hidden md:block">Apuntes</span></div>
+                    <div class="sidebar-item"><i data-lucide="clock" size="18"></i> <span class="hidden md:block">Focus</span></div>
+                    
+                    <div class="my-2 border-t border-gray-800"></div>
+                    
+                    <div class="sidebar-item text-gray-500"><i data-lucide="coffee" size="18"></i> <span class="hidden md:block">Grupos</span></div>
+                    <div class="sidebar-item text-gray-500"><i data-lucide="users" size="18"></i> <span class="hidden md:block">Comunidad</span></div>
                 </div>
 
-                <!-- Contenido simulado -->
-                <div class="flex-1 bg-gray-950 p-6 md:p-8 flex flex-col gap-6 overflow-hidden relative">
-                    <!-- Header del Dashboard -->
-                    <div class="flex justify-between items-end">
+                <!-- Área Principal -->
+                <div class="flex-1 bg-gray-950 p-8 flex flex-col relative">
+                    <!-- Header Falso -->
+                    <div class="flex justify-between items-end mb-8">
                         <div>
-                            <h2 class="text-2xl md:text-3xl font-bold text-white">Ingeniería en Sistemas</h2>
-                            <p class="text-gray-400">Resumen Académico</p>
+                            <h2 class="text-3xl font-bold text-white">Ingeniería en Sistemas</h2>
+                            <p class="text-gray-400 text-sm mt-1">Progreso de Carrera: 32%</p>
                         </div>
-                        <div class="flex gap-3 hidden md:flex">
-                            <div class="bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 text-right">
-                                <p class="text-[10px] text-gray-400 uppercase font-bold">Promedio</p>
-                                <p class="text-xl font-bold text-blue-400">8.75</p>
+                        <div class="flex gap-3">
+                            <div class="bg-gray-800 px-4 py-2 rounded-lg border border-gray-700">
+                                <p class="text-[10px] uppercase font-bold text-gray-500">Promedio</p>
+                                <p class="text-xl font-bold text-blue-400">8.50</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Bloques de Estadísticas -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="p-4 bg-gray-800 rounded-xl border-l-4 border-yellow-500">
-                            <h3 class="text-gray-400 text-xs font-bold uppercase">Cursando</h3>
-                            <p class="text-2xl font-bold text-white mt-1">4 <span class="text-sm font-normal text-gray-500">Materias</span></p>
+                    <!-- Grid Widgets -->
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="p-5 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border-l-4 border-yellow-500">
+                            <p class="text-xs font-bold text-gray-400 uppercase">Cursando</p>
+                            <p class="text-3xl font-bold text-white mt-2">5</p>
                         </div>
-                        <div class="p-4 bg-gray-800 rounded-xl border-l-4 border-emerald-500">
-                            <h3 class="text-gray-400 text-xs font-bold uppercase">Aprobadas</h3>
-                            <p class="text-2xl font-bold text-white mt-1">12 <span class="text-sm font-normal text-gray-500">Finales</span></p>
+                        <div class="p-5 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border-l-4 border-emerald-500">
+                            <p class="text-xs font-bold text-gray-400 uppercase">Aprobadas</p>
+                            <p class="text-3xl font-bold text-white mt-2">14</p>
                         </div>
-                        <div class="p-4 bg-gray-800 rounded-xl border-l-4 border-blue-500">
-                            <h3 class="text-gray-400 text-xs font-bold uppercase">Pendientes</h3>
-                            <p class="text-2xl font-bold text-white mt-1">5 <span class="text-sm font-normal text-gray-500">Tareas hoy</span></p>
+                        <div class="p-5 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border-l-4 border-blue-500">
+                            <p class="text-xs font-bold text-gray-400 uppercase">Pendientes Hoy</p>
+                            <p class="text-3xl font-bold text-white mt-2">3</p>
                         </div>
                     </div>
 
-                    <!-- Fila Principal: Materias y Tareas -->
-                    <div class="flex flex-col md:flex-row gap-6 flex-1 min-h-0">
-                        
-                        <!-- Lista de Materias -->
-                        <div class="flex-1 bg-gray-900/50 rounded-xl border border-gray-800 p-4 flex flex-col">
-                            <h3 class="font-bold text-white mb-4 flex items-center gap-2">
-                                <i data-lucide="book-open" class="text-blue-400 w-4 h-4"></i> Materias Activas
-                            </h3>
-                            <div class="space-y-3 mockup-scroll overflow-y-auto pr-2">
-                                <!-- Card Materia 1 -->
-                                <div class="bg-gray-800 p-3 rounded-lg border-l-4 border-blue-500 flex justify-between items-center">
-                                    <div>
-                                        <p class="font-bold text-white">Análisis Matemático II</p>
-                                        <p class="text-xs text-gray-400">Lun 18:00 - 22:00 • Aula 203</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <span class="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded border border-green-500/30">AL DÍA</span>
-                                    </div>
-                                </div>
-                                <!-- Card Materia 2 -->
-                                <div class="bg-gray-800 p-3 rounded-lg border-l-4 border-purple-500 flex justify-between items-center">
-                                    <div>
-                                        <p class="font-bold text-white">Física I</p>
-                                        <p class="text-xs text-gray-400">Mié 14:00 - 18:00 • Laboratorio B</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <span class="text-xs bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded border border-yellow-500/30">PARCIAL CERCA</span>
-                                    </div>
-                                </div>
-                                <!-- Card Materia 3 -->
-                                <div class="bg-gray-800 p-3 rounded-lg border-l-4 border-orange-500 flex justify-between items-center">
-                                    <div>
-                                        <p class="font-bold text-white">Algoritmos y Estructuras</p>
-                                        <p class="text-xs text-gray-400">Vie 19:00 - 23:00 • Virtual</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <span class="text-xs bg-gray-700 text-gray-400 px-2 py-0.5 rounded">PENDIENTE</span>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Lista Materias -->
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-4 flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+                            <span class="font-bold">Análisis de Sistemas</span>
+                            <span class="ml-auto text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">CURSANDO</span>
                         </div>
-
-                        <!-- Lista de Tareas -->
-                        <div class="w-full md:w-1/3 bg-gray-900/50 rounded-xl border border-gray-800 p-4 flex flex-col">
-                            <h3 class="font-bold text-white mb-4 flex items-center gap-2">
-                                <i data-lucide="check-circle" class="text-green-400 w-4 h-4"></i> Próximas Entregas
-                            </h3>
-                            <div class="space-y-2 mockup-scroll overflow-y-auto pr-2">
-                                <div class="bg-gray-800 p-2 rounded border border-gray-700 flex items-center gap-3 opacity-50">
-                                    <div class="w-4 h-4 rounded border border-gray-500 bg-green-500/20 flex items-center justify-center"><i data-lucide="check" class="w-3 h-3 text-green-500"></i></div>
-                                    <span class="line-through text-gray-500 text-xs">Inscripción a finales</span>
-                                </div>
-                                <div class="bg-gray-800 p-2 rounded border border-gray-700 flex items-center gap-3">
-                                    <div class="w-4 h-4 rounded border border-gray-500"></div>
-                                    <div>
-                                        <p class="text-white text-xs">TP de Física (Péndulo)</p>
-                                        <p class="text-[10px] text-red-400 font-bold">Vence hoy</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-800 p-2 rounded border border-gray-700 flex items-center gap-3">
-                                    <div class="w-4 h-4 rounded border border-gray-500"></div>
-                                    <div>
-                                        <p class="text-white text-xs">Leer Cap 4. de Sistemas</p>
-                                        <p class="text-[10px] text-gray-500">Mañana</p>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-800 p-2 rounded border border-gray-700 flex items-center gap-3">
-                                    <div class="w-4 h-4 rounded border border-gray-500"></div>
-                                    <div>
-                                        <p class="text-white text-xs">Comprar apuntes</p>
-                                        <p class="text-[10px] text-gray-500">Sin fecha</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="h-px bg-gray-800 w-full mb-4"></div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                            <span class="font-bold">Sintaxis y Semántica</span>
+                            <span class="ml-auto text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">CURSANDO</span>
                         </div>
-
                     </div>
                 </div>
             </div>
-            
-            <!-- Decoración de fondo -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[500px] bg-blue-600/20 blur-[120px] -z-10 rounded-full"></div>
         </div>
     </header>
 
-    <!-- FEATURES -->
+    <!-- CAREERS SECTION (NEW!) -->
+    <section id="careers" class="py-20 bg-gray-950 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Empieza en segundos, no en horas</h2>
+                <p class="text-gray-400">Selecciona tu carrera y carga automáticamente todo el plan de estudios oficial.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-blue-500 transition-colors group">
+                    <div class="bg-blue-900/20 p-3 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors text-blue-400"><i data-lucide="monitor"></i></div>
+                    <span class="font-bold text-sm">Ing. Sistemas</span>
+                </div>
+                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-yellow-500 transition-colors group">
+                    <div class="bg-yellow-900/20 p-3 rounded-full group-hover:bg-yellow-600 group-hover:text-white transition-colors text-yellow-400"><i data-lucide="zap"></i></div>
+                    <span class="font-bold text-sm">Ing. Eléctrica</span>
+                </div>
+                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-red-500 transition-colors group">
+                    <div class="bg-red-900/20 p-3 rounded-full group-hover:bg-red-600 group-hover:text-white transition-colors text-red-400"><i data-lucide="wrench"></i></div>
+                    <span class="font-bold text-sm">Ing. Mecánica</span>
+                </div>
+                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-green-500 transition-colors group">
+                    <div class="bg-green-900/20 p-3 rounded-full group-hover:bg-green-600 group-hover:text-white transition-colors text-green-400"><i data-lucide="flask-conical"></i></div>
+                    <span class="font-bold text-sm">Ing. Química</span>
+                </div>
+                <!-- Fila 2 -->
+                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-purple-500 transition-colors group">
+                    <div class="bg-purple-900/20 p-3 rounded-full group-hover:bg-purple-600 group-hover:text-white transition-colors text-purple-400"><i data-lucide="cpu"></i></div>
+                    <span class="font-bold text-sm">Ing. Electrónica</span>
+                </div>
+                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-orange-500 transition-colors group">
+                    <div class="bg-orange-900/20 p-3 rounded-full group-hover:bg-orange-600 group-hover:text-white transition-colors text-orange-400"><i data-lucide="factory"></i></div>
+                    <span class="font-bold text-sm">Ing. Industrial</span>
+                </div>
+                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-pink-500 transition-colors group">
+                    <div class="bg-pink-900/20 p-3 rounded-full group-hover:bg-pink-600 group-hover:text-white transition-colors text-pink-400"><i data-lucide="scissors"></i></div>
+                    <span class="font-bold text-sm">Ing. Textil</span>
+                </div>
+                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-gray-500 transition-colors group">
+                    <div class="bg-gray-800 p-3 rounded-full group-hover:bg-gray-600 group-hover:text-white transition-colors text-gray-400"><i data-lucide="plus"></i></div>
+                    <span class="font-bold text-sm">Manual / Otra</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES GRID -->
     <section id="features" class="py-24 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Todo lo que necesitas para aprobar</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Diseñada pensando en la vida real del estudiante. Olvídate de las carpetas desordenadas y los post-its perdidos.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div data-aos="fade-up" class="feature-card bg-gray-800 p-8 rounded-2xl border border-gray-700 transition-all duration-300">
-                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 text-blue-400">
-                        <i data-lucide="layout-dashboard"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Feature 1: Editor -->
+                <div class="col-span-1 md:col-span-2 feature-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-blue-600/20"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 text-blue-400">
+                            <i data-lucide="sticky-note"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Nuevo Editor de Apuntes</h3>
+                        <p class="text-gray-400 mb-6">Olvídate del bloc de notas. Escribe con formato rico: <strong>Negritas</strong>, <em>Cursivas</em>, Listas y más. Guarda tus resúmenes vinculados directamente a cada materia.</p>
+                        <div class="bg-gray-950 border border-gray-800 rounded-lg p-4 text-sm text-gray-300 font-mono">
+                            <div class="flex gap-2 mb-2 border-b border-gray-800 pb-2">
+                                <span class="font-bold text-white">B</span> <span class="italic">I</span> <u>U</u>
+                            </div>
+                            <p>Resumen de Física I: <br> La ley de inercia establece que...</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Dashboard Académico</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Visualiza tu promedio, tu porcentaje de carrera y las materias que estás cursando de un vistazo.</p>
                 </div>
 
-                <!-- Feature 2 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="feature-card bg-gray-800 p-8 rounded-2xl border border-gray-700 transition-all duration-300">
-                    <div class="w-12 h-12 bg-purple-900/50 rounded-lg flex items-center justify-center mb-6 text-purple-400">
+                <!-- Feature 2: Archivos -->
+                <div class="feature-card p-8 rounded-3xl">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 text-purple-400">
                         <i data-lucide="folder-open"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Gestor de Archivos Real</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Sube PDFs, Words y carpetas enteras. Arrastra y suelta. Tus archivos se organizan automáticamente por materia.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">Gestor de Archivos</h3>
+                    <p class="text-gray-400">Un sistema de archivos real. Crea carpetas, arrastra PDFs y organízalo todo localmente. Sin límites de nube.</p>
                 </div>
 
-                <!-- Feature 3 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="feature-card bg-gray-800 p-8 rounded-2xl border border-gray-700 transition-all duration-300">
-                    <div class="w-12 h-12 bg-green-900/50 rounded-lg flex items-center justify-center mb-6 text-green-400">
-                        <i data-lucide="check-square"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Tareas & Exámenes</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">No te olvides de ninguna entrega. Sistema Kanban para tareas y cuenta regresiva para tus parciales.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div data-aos="fade-up" class="feature-card bg-gray-800 p-8 rounded-2xl border border-gray-700 transition-all duration-300">
-                    <div class="w-12 h-12 bg-orange-900/50 rounded-lg flex items-center justify-center mb-6 text-orange-400">
-                        <i data-lucide="clock"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Modo Focus (Pomodoro)</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Estudia sin quemarte. Timer integrado para sesiones de estudio profundas y descansos programados.</p>
-                </div>
-
-                <!-- Feature 5 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="feature-card bg-gray-800 p-8 rounded-2xl border border-gray-700 transition-all duration-300">
-                    <div class="w-12 h-12 bg-red-900/50 rounded-lg flex items-center justify-center mb-6 text-red-400">
+                <!-- Feature 3: Integraciones -->
+                <div class="feature-card p-8 rounded-3xl">
+                    <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6 text-red-400">
                         <i data-lucide="mail"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Correo Integrado</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Revisa tu Gmail o Outlook universitario sin salir de la aplicación. Mantén el foco en una sola ventana.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">WebViews Integradas</h3>
+                    <p class="text-gray-400">Tu correo universitario y el portal de autogestión (Sysacad/Guaraní) dentro de la app. No más cambios de ventana.</p>
                 </div>
 
-                <!-- Feature 6 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="feature-card bg-gray-800 p-8 rounded-2xl border border-gray-700 transition-all duration-300">
-                    <div class="w-12 h-12 bg-pink-900/50 rounded-lg flex items-center justify-center mb-6 text-pink-400">
-                        <i data-lucide="user-check"></i>
+                <!-- Feature 4: Comunidad -->
+                <div class="col-span-1 md:col-span-2 feature-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-yellow-500/20"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center mb-6 text-yellow-400">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Comunidad y Tutores</h3>
+                        <p class="text-gray-400">No estudies solo. Únete a grupos de estudio por materia, comparte recursos en la comunidad o contacta profesores particulares validados directamente desde la plataforma.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Control de Faltas</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Lleva la cuenta de tus asistencias. Que no te sorprenda quedar libre a final de cuatrimestre.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-blue-900/10"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Tu semestre, bajo control.</h2>
+            <p class="text-xl text-gray-400 mb-10">Disponible para Windows 10 y 11. Gratis, código abierto y hecho por un estudiante para estudiantes.</p>
+            
+            <div class="flex flex-col items-center gap-6">
+                <a href="https://github.com/NicolasPetasne/UniStation/releases/download/v1.0.0/UniStation.Pro.Setup.1.0.0.exe" class="group relative px-8 py-4 bg-white text-gray-900 font-bold rounded-full text-lg shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-all hover:scale-105">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="windows" class="text-blue-600"></i>
+                        <span>Descargar Instalador .exe</span>
+                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+                
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                    <span class="flex items-center gap-1"><i data-lucide="shield-check" size="14"></i> Libre de virus</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1"><i data-lucide="hard-drive" size="14"></i> 100% Local</span>
+                    <span>•</span>
+                    <span>v1.0.0 Stable</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- WHY SECTION -->
-    <section id="why" class="py-20 bg-gray-950 border-t border-gray-900">
-        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-1 space-y-6" data-aos="fade-right">
-                <h2 class="text-3xl font-bold">¿Por qué UniStation?</h2>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <i data-lucide="check-circle" class="text-green-500 mt-1"></i>
-                        <div>
-                            <strong class="block text-white">100% Offline y Privado</strong>
-                            <span class="text-gray-400 text-sm">Tus datos se guardan en tu disco duro, no en la nube. Nadie lee tus archivos.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i data-lucide="check-circle" class="text-green-500 mt-1"></i>
-                        <div>
-                            <strong class="block text-white">Gratis y Open Source</strong>
-                            <span class="text-gray-400 text-sm">Creada por estudiantes para estudiantes. Sin costos ocultos ni versiones premium.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i data-lucide="check-circle" class="text-green-500 mt-1"></i>
-                        <div>
-                            <strong class="block text-white">Centralización Total</strong>
-                            <span class="text-gray-400 text-sm">El fin de las pestañas abiertas. Campus, Mail y Apuntes en una sola ventana.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex-1 bg-gradient-to-br from-blue-900 to-gray-900 p-8 rounded-2xl border border-gray-800 text-center" data-aos="fade-left">
-                <h3 class="text-2xl font-bold mb-2">Diseñada para la Productividad</h3>
-                <p class="text-gray-400 mb-6">Deja de perder tiempo organizando y empieza a estudiar de verdad.</p>
-                <div class="text-6xl font-bold text-white mb-2">100%</div>
-                <div class="text-blue-400 uppercase tracking-widest text-sm font-semibold">Enfoque</div>
+            <div class="mt-16 p-6 bg-gray-900/50 border border-gray-800 rounded-2xl max-w-xl mx-auto">
+                <div class="flex items-center justify-center gap-3 mb-2">
+                    <i data-lucide="coffee" class="text-yellow-500"></i>
+                    <span class="font-bold">Proyecto mantenido por la comunidad</span>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">
+                    Soy Nico. Creé esta app porque necesitaba orden en mi cursada. Si te sirve para aprobar, considera invitarme un café.
+                </p>
+                <a href="https://cafecito.app/nicopet" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-medium hover:underline">
+                    Apoyar en Cafecito &rarr;
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- DOWNLOAD CTA -->
-    <section id="download" class="py-24 bg-blue-900/20 text-center relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-30"></div>
-        <div class="max-w-3xl mx-auto px-4 relative z-10">
-            <h2 class="text-4xl font-bold mb-6">Empieza tu semestre con el pie derecho</h2>
-            <p class="text-gray-300 mb-8 text-lg">Descarga UniStation hoy y transforma tu manera de estudiar. Disponible para Windows.</p>
-            
-            <!-- LINK DE DESCARGA: PEGA EL LINK AQUÍ ABAJO -->
-            <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.0.0/UniStation.Pro.Setup.1.0.0.exe" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-gray-100 transition-transform hover:scale-105 shadow-xl">
-                <i data-lucide="download-cloud"></i>
-                <span>Descargar Instalador (.exe)</span>
-            </a>
-            <p class="mt-4 text-sm text-gray-500">Versión 1.0.0 • Windows 10/11 • 64-bit</p>
+    <footer class="bg-gray-950 py-12 border-t border-gray-900 text-center text-gray-500 text-sm">
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="#" class="hover:text-white transition-colors"><i data-lucide="github"></i></a>
+            <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
+            <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
         </div>
-    </section>
-
-    <footer class="bg-gray-950 py-8 border-t border-gray-900 text-center">
-        <p class="text-gray-500 text-sm">© 2023 UniStation Project. Creado con ❤️ y mucho café.</p>
-        <div class="flex justify-center gap-4 mt-4">
-            <a href="#" class="text-gray-600 hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
-        </div>
+        <p>© 2024 UniStation Project. Open Source.</p>
     </footer>
 
     <script>
-        // Inicializar Iconos
         lucide.createIcons();
-        // Inicializar Animaciones
         AOS.init({
             duration: 800,
-            once: true
+            once: true,
+            offset: 100
         });
     </script>
 </body>
