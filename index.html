@@ -269,8 +269,8 @@
                     <span class="font-bold text-sm">Ing. Industrial</span>
                 </div>
                 <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-pink-500 transition-colors group">
-                    <div class="bg-pink-900/20 p-3 rounded-full group-hover:bg-pink-600 group-hover:text-white transition-colors text-pink-400"><i data-lucide="scissors"></i></div>
-                    <span class="font-bold text-sm">Ing. Textil</span>
+                    <div class="bg-pink-900/20 p-3 rounded-full group-hover:bg-pink-600 group-hover:text-white transition-colors text-pink-400"><i data-lucide="mic"></i></div>
+                    <span class="font-bold text-sm">Com. Periodística</span>
                 </div>
                 <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-gray-500 transition-colors group">
                     <div class="bg-gray-800 p-3 rounded-full group-hover:bg-gray-600 group-hover:text-white transition-colors text-gray-400"><i data-lucide="plus"></i></div>
@@ -280,60 +280,153 @@
         </div>
     </section>
 
-    <!-- FEATURES GRID -->
+    <!-- FEATURES GRID (EXPANDED) -->
     <section id="features" class="py-24 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Feature 1: Editor -->
-                <div class="col-span-1 md:col-span-2 feature-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-blue-600/20"></div>
-                    <div class="relative z-10">
-                        <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 text-blue-400">
-                            <i data-lucide="sticky-note"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Nuevo Editor de Apuntes</h3>
-                        <p class="text-gray-400 mb-6">Olvídate del bloc de notas. Escribe con formato rico: <strong>Negritas</strong>, <em>Cursivas</em>, Listas y más. Guarda tus resúmenes vinculados directamente a cada materia.</p>
-                        <div class="bg-gray-950 border border-gray-800 rounded-lg p-4 text-sm text-gray-300 font-mono">
-                            <div class="flex gap-2 mb-2 border-b border-gray-800 pb-2">
-                                <span class="font-bold text-white">B</span> <span class="italic">I</span> <u>U</u>
-                            </div>
-                            <p>Resumen de Física I: <br> La ley de inercia establece que...</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature 2: Archivos -->
-                <div class="feature-card p-8 rounded-3xl">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6 text-purple-400">
-                        <i data-lucide="folder-open"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Gestor de Archivos</h3>
-                    <p class="text-gray-400">Un sistema de archivos real. Crea carpetas, arrastra PDFs y organízalo todo localmente. Sin límites de nube.</p>
-                </div>
-
-                <!-- Feature 3: Integraciones -->
-                <div class="feature-card p-8 rounded-3xl">
-                    <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6 text-red-400">
-                        <i data-lucide="mail"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">WebViews Integradas</h3>
-                    <p class="text-gray-400">Tu correo universitario y el portal de autogestión (Sysacad/Guaraní) dentro de la app. No más cambios de ventana.</p>
-                </div>
-
-                <!-- Feature 4: Comunidad -->
-                <div class="col-span-1 md:col-span-2 feature-card p-8 rounded-3xl relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-yellow-500/20"></div>
-                    <div class="relative z-10">
-                        <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center mb-6 text-yellow-400">
-                            <i data-lucide="users"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Comunidad y Tutores</h3>
-                        <p class="text-gray-400">No estudies solo. Únete a grupos de estudio por materia, comparte recursos en la comunidad o contacta profesores particulares validados directamente desde la plataforma.</p>
-                    </div>
-                </div>
-
+            
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Todo lo que necesitas para aprobar</h2>
+                <p class="text-gray-400 text-lg">Olvídate de Excel, Notion y el bloc de notas. Todo está aquí.</p>
             </div>
+
+            <!-- BLOQUE 1: ORGANIZACIÓN ACADÉMICA -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="book-open" class="text-blue-500"></i> Gestión Académica</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400"><i data-lucide="target"></i></div>
+                            <h4 class="font-bold text-lg">Control de Materias</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Sigue el estado de cada materia (cursada/aprobada). Controla <strong>asistencia</strong>, notas de parciales y objetivos para llegar al final.</p>
+                    </div>
+
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400"><i data-lucide="clipboard-list"></i></div>
+                            <h4 class="font-bold text-lg">Exámenes y Entregas</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Agenda tus parciales y entregas. Visualiza la cuenta regresiva y anota qué temas entran en cada examen.</p>
+                    </div>
+
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400"><i data-lucide="calendar"></i></div>
+                            <h4 class="font-bold text-lg">Cronograma y Calendario</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm">Visualiza tus horarios de cursada semanal y un calendario mensual con todas tus fechas clave unificadas.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- BLOQUE 2: PRODUCTIVIDAD Y HERRAMIENTAS -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="zap" class="text-yellow-500"></i> Productividad y Estudio</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400 mb-4"><i data-lucide="check-circle"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Gestor de Tareas</h4>
+                        <p class="text-gray-400 text-sm">Sistema tipo Kanban. Organiza tus pendientes en "Por hacer", "En progreso" y "Hecho". Asigna tareas a materias específicas.</p>
+                    </div>
+
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400 mb-4"><i data-lucide="clock"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Pomodoro Flotante</h4>
+                        <p class="text-gray-400 text-sm">Temporizador Focus integrado con modo "Picture-in-Picture" para que estudies sin distraerte, navegues donde navegues.</p>
+                    </div>
+
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-4"><i data-lucide="sticky-note"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Apuntes con Formato</h4>
+                        <p class="text-gray-400 text-sm">Editor de texto rico. Crea resúmenes con negritas, listas y formato real. Todo guardado localmente en tu PC.</p>
+                    </div>
+
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center text-teal-400 mb-4"><i data-lucide="target"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Planificador de Objetivos</h4>
+                        <p class="text-gray-400 text-sm">Define metas a corto y largo plazo. Visualiza tu progreso y mantén la motivación durante el cuatrimestre.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- BLOQUE 3: TU ESPACIO DIGITAL -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="hard-drive" class="text-pink-500"></i> Tu Espacio Digital</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="feature-card p-6 rounded-2xl bg-gray-800/80 border-pink-500/30 border relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-pink-600/10 rounded-full blur-2xl transition-all group-hover:bg-pink-600/20"></div>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center text-pink-400 mb-4"><i data-lucide="folder-open"></i></div>
+                            <h4 class="font-bold text-lg mb-2">Sistema de Archivos Real</h4>
+                            <p class="text-gray-400 text-sm">No es solo una lista. Crea carpetas, sube PDFs, arrastra y suelta archivos como en Windows. Todo queda ordenado en tu carpeta local de Documentos.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 mb-4"><i data-lucide="mail"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Correo Integrado</h4>
+                        <p class="text-gray-400 text-sm">Accede a tu Gmail o Outlook universitario sin salir de la app. Mantén tu comunicación académica separada de la personal.</p>
+                    </div>
+
+                    <div class="feature-card p-6 rounded-2xl">
+                        <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400 mb-4"><i data-lucide="globe"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Portal de Facultad</h4>
+                        <p class="text-gray-400 text-sm">Navega en el Guaraní, Sysacad o el campus virtual de tu facultad directamente desde UniStation. Login persistente.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- BLOQUE 4: COMUNIDAD Y SOCIAL -->
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="users" class="text-blue-400"></i> Conecta y Aprueba</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="feature-card p-8 rounded-3xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400"><i data-lucide="coffee"></i></div>
+                                <h4 class="font-bold text-xl text-white">Grupos de Estudio</h4>
+                            </div>
+                            <p class="text-gray-400 mb-4">¿Estudiar solo? Jamás. Únete a grupos privados mediante ID, chatea en tiempo real, y comparte archivos con tus compañeros de cursada.</p>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-blue-500"></i> Chat en tiempo real</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-blue-500"></i> Compartir archivos y recursos</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-blue-500"></i> Grupos privados y seguros</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="feature-card p-8 rounded-3xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400"><i data-lucide="library"></i></div>
+                                <h4 class="font-bold text-xl text-white">Comunidad y Tutores</h4>
+                            </div>
+                            <p class="text-gray-400 mb-4">Accede a un banco de apuntes y exámenes subidos por otros estudiantes. Filtra por universidad, materia o tipo de archivo.</p>
+                            <div class="flex gap-4 mt-6">
+                                <div class="bg-gray-900/50 p-3 rounded-lg border border-gray-700 flex-1">
+                                    <div class="text-xs text-gray-500 uppercase font-bold mb-1">Mercado de Tutores</div>
+                                    <p class="text-sm text-gray-300">Contacta profes particulares validados.</p>
+                                </div>
+                                <div class="bg-gray-900/50 p-3 rounded-lg border border-gray-700 flex-1">
+                                    <div class="text-xs text-gray-500 uppercase font-bold mb-1">Recursos</div>
+                                    <p class="text-sm text-gray-300">Descarga resúmenes y parciales viejos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
