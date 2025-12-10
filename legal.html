@@ -9,8 +9,8 @@
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
-            color: #e5e7eb; /* Texto claro */
-            background-color: #111827; /* Fondo oscuro principal */
+            color: #e5e7eb; 
+            background-color: #111827; 
             margin: 0; 
             padding: 20px; 
             display: flex;
@@ -18,7 +18,6 @@
             min-height: 100vh;
         }
         
-        /* Contenedor estilo "Card" (#1f2937) */
         .box { 
             background-color: #1f2937; 
             padding: 40px; 
@@ -31,7 +30,7 @@
         }
 
         h1 { 
-            color: #3b82f6; /* Azul UniStation */
+            color: #3b82f6; 
             border-bottom: 1px solid #374151; 
             padding-bottom: 15px; 
             margin-top: 0;
@@ -46,30 +45,15 @@
         }
 
         p, li {
-            color: #9ca3af; /* Gris suave */
+            color: #9ca3af; 
             font-size: 14px;
         }
 
-        strong {
-            color: #e5e7eb; /* Blanco suave */
-        }
-
-        a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
+        strong { color: #e5e7eb; }
+        a { color: #60a5fa; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -78,30 +62,35 @@
         <p><strong>Última actualización:</strong> 10 de Diciembre de 2025</p>
 
         <h2>1. Introducción</h2>
-        <p>Bienvenido a <strong>UniStation</strong> ("la Aplicación"). La Aplicación es desarrollada y operada por <strong>Nicolás Petasne</strong> ("el Desarrollador"). Al descargar, acceder o utilizar UniStation, usted acepta quedar vinculado por estos Términos.</p>
+        <p>Bienvenido a <strong>UniStation</strong> ("la Aplicación"). La Aplicación es desarrollada y operada de forma independiente por <strong>Nicolás Petasne</strong> ("el Desarrollador"). Al utilizarla, acepta estos Términos.</p>
 
-        <h2>2. Uso de la Aplicación</h2>
+        <h2>2. Deslinde de Responsabilidad Institucional</h2>
+        <p><strong>UniStation es un proyecto independiente y NO es una aplicación oficial.</strong></p>
+        <p>No tenemos afiliación, asociación, autorización, respaldo ni conexión oficial de ninguna manera con la <strong>Universidad Tecnológica Nacional (UTN)</strong>, Universidad de Buenos Aires (UBA), UCA, UADE ni ninguna otra institución educativa mencionada en la plataforma.</p>
+        <p>Los nombres de las universidades se utilizan únicamente con fines descriptivos para ayudar a los estudiantes a organizar sus materias. Todas las marcas registradas pertenecen a sus respectivos dueños.</p>
+
+        <h2>3. Uso de la Aplicación</h2>
         <ul>
-            <li><strong>Modo Local:</strong> Si utiliza la Aplicación sin iniciar sesión, sus datos se almacenan exclusivamente en su dispositivo. El Desarrollador no tiene acceso a ellos.</li>
-            <li><strong>Modo Nube:</strong> Si inicia sesión con Google, ciertos datos (perfil, materias, tareas) se sincronizan a través de Google Firebase para permitir el acceso multidispositivo.</li>
+            <li><strong>Modo Local:</strong> Sus datos se almacenan exclusivamente en su dispositivo.</li>
+            <li><strong>Modo Nube:</strong> Si inicia sesión, sus datos se sincronizan vía Google Firebase.</li>
         </ul>
 
-        <h2>3. Comunidad y Copyright (Aviso Importante)</h2>
-        <p>La sección "Comunidad" permite a los usuarios compartir archivos académicos.</p>
+        <h2>4. Comunidad y Copyright</h2>
+        <p>La sección "Comunidad" permite compartir archivos académicos entre pares.</p>
         <ul>
-            <li>Usted declara ser el titular de los derechos de autor o tener la licencia necesaria para compartir cualquier archivo que suba.</li>
-            <li><strong>PROHIBIDO:</strong> Subir libros completos escaneados, material pirata o contenido con Copyright sin autorización.</li>
-            <li><strong>Safe Harbor:</strong> UniStation actúa como un mero intermediario de alojamiento. Eliminaremos contenido inmediatamente ante notificaciones de infracción (DMCA).</li>
+            <li>Usted declara ser el titular de los derechos o tener permiso para compartir el material.</li>
+            <li><strong>PROHIBIDO:</strong> Subir libros completos, material pirata o contenido con Copyright.</li>
+            <li><strong>Safe Harbor:</strong> Actuamos como intermediarios. Eliminaremos contenido ante notificaciones de infracción (DMCA).</li>
         </ul>
 
-        <h2>4. Exención de Garantías ("As-Is")</h2>
-        <p>La Aplicación se proporciona "tal cual". El Desarrollador <strong>no garantiza</strong> que esté libre de errores, que la sincronización sea ininterrumpida o que los datos estén 100% seguros ante fallos técnicos. Usted es responsable de mantener copias de seguridad de sus apuntes importantes.</p>
+        <h2>5. Exención de Garantías ("As-Is")</h2>
+        <p>La Aplicación se ofrece "tal cual". No garantizamos que esté libre de errores ni nos responsabilizamos por la pérdida de datos académicos. Mantenga copias de seguridad.</p>
 
-        <h2>5. Política de Privacidad</h2>
-        <p>Recopilamos su email, nombre y foto (vía Google Auth) únicamente para gestionar su cuenta en la Nube. Utilizamos Google Analytics para métricas anónimas de estabilidad. Puede solicitar la eliminación completa de su cuenta y datos desde la sección "Configuración".</p>
+        <h2>6. Política de Privacidad</h2>
+        <p>Recopilamos email/nombre (vía Google) solo para el inicio de sesión. Usamos Google Analytics para métricas anónimas. Puede borrar su cuenta y datos definitivamente desde la Configuración.</p>
 
-        <h2>6. Contacto y Reportes</h2>
-        <p>Para reportar contenido ilegal o solicitar soporte, contacte a: <strong>nicolaspetasne@gmail.com</strong></p>
+        <h2>7. Contacto</h2>
+        <p>Para reportes o soporte: <strong>nicolaspetasne@gmail.com</strong></p>
     </div>
 </body>
 </html>
