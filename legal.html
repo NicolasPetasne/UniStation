@@ -5,43 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Privacidad - UniStation</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #1f2937; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9fafb; }
-        h1 { color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
-        h2 { color: #111827; margin-top: 30px; }
-        .box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .highlight { background-color: #fffbeb; padding: 2px 5px; border-radius: 4px; font-weight: bold; color: #92400e; }
+        /* Estilos Dark Mode coincidiendo con tu App (Tailwind Gray-900) */
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: #e5e7eb; /* Texto claro */
+            background-color: #111827; /* Fondo oscuro principal */
+            margin: 0; 
+            padding: 20px; 
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        /* Contenedor estilo "Card" (#1f2937) */
+        .box { 
+            background-color: #1f2937; 
+            padding: 40px; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); 
+            max-width: 800px; 
+            width: 100%;
+            border: 1px solid #374151;
+            height: fit-content;
+        }
+
+        h1 { 
+            color: #3b82f6; /* Azul UniStation */
+            border-bottom: 1px solid #374151; 
+            padding-bottom: 15px; 
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        h2 { 
+            color: #ffffff; 
+            margin-top: 30px; 
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        p, li {
+            color: #9ca3af; /* Gris suave */
+            font-size: 14px;
+        }
+
+        strong {
+            color: #e5e7eb; /* Blanco suave */
+        }
+
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
     <div class="box">
         <h1>Términos de Uso y Política de Privacidad</h1>
-        <p><strong>Última actualización:</strong> Diciembre 2023</p>
+        <p><strong>Última actualización:</strong> 10 de Diciembre de 2025</p>
 
         <h2>1. Introducción</h2>
         <p>Bienvenido a <strong>UniStation</strong> ("la Aplicación"). La Aplicación es desarrollada y operada por <strong>Nicolás Petasne</strong> ("el Desarrollador"). Al descargar, acceder o utilizar UniStation, usted acepta quedar vinculado por estos Términos.</p>
 
         <h2>2. Uso de la Aplicación</h2>
         <ul>
-            <li><strong>Modo Local:</strong> Si utiliza la Aplicación sin iniciar sesión, sus datos se almacenan exclusivamente en su dispositivo.</li>
-            <li><strong>Modo Nube:</strong> Si inicia sesión con Google, ciertos datos se sincronizan a través de Google Firebase.</li>
+            <li><strong>Modo Local:</strong> Si utiliza la Aplicación sin iniciar sesión, sus datos se almacenan exclusivamente en su dispositivo. El Desarrollador no tiene acceso a ellos.</li>
+            <li><strong>Modo Nube:</strong> Si inicia sesión con Google, ciertos datos (perfil, materias, tareas) se sincronizan a través de Google Firebase para permitir el acceso multidispositivo.</li>
         </ul>
 
         <h2>3. Comunidad y Copyright (Aviso Importante)</h2>
-        <p>La sección "Comunidad" permite compartir archivos académicos.</p>
+        <p>La sección "Comunidad" permite a los usuarios compartir archivos académicos.</p>
         <ul>
-            <li>Usted declara ser el titular de los derechos o tener licencia para compartir lo que sube.</li>
-            <li><span class="highlight">PROHIBIDO:</span> Subir libros completos escaneados, material pirata o contenido con Copyright sin permiso.</li>
-            <li><strong>Safe Harbor:</strong> UniStation actúa como intermediario de alojamiento. Eliminaremos contenido ante notificaciones de infracción (DMCA).</li>
+            <li>Usted declara ser el titular de los derechos de autor o tener la licencia necesaria para compartir cualquier archivo que suba.</li>
+            <li><strong>PROHIBIDO:</strong> Subir libros completos escaneados, material pirata o contenido con Copyright sin autorización.</li>
+            <li><strong>Safe Harbor:</strong> UniStation actúa como un mero intermediario de alojamiento. Eliminaremos contenido inmediatamente ante notificaciones de infracción (DMCA).</li>
         </ul>
 
         <h2>4. Exención de Garantías ("As-Is")</h2>
-        <p>La Aplicación se proporciona "tal cual". El Desarrollador <strong>no garantiza</strong> que esté libre de errores ni se hace responsable por la pérdida de apuntes o datos académicos. Mantenga sus propias copias de seguridad.</p>
+        <p>La Aplicación se proporciona "tal cual". El Desarrollador <strong>no garantiza</strong> que esté libre de errores, que la sincronización sea ininterrumpida o que los datos estén 100% seguros ante fallos técnicos. Usted es responsable de mantener copias de seguridad de sus apuntes importantes.</p>
 
         <h2>5. Política de Privacidad</h2>
-        <p>Recopilamos email y nombre (vía Google Auth) solo para gestionar su cuenta en la Nube. Utilizamos Google Analytics para métricas anónimas de estabilidad. Puede solicitar el borrado de su cuenta desde la Configuración.</p>
+        <p>Recopilamos su email, nombre y foto (vía Google Auth) únicamente para gestionar su cuenta en la Nube. Utilizamos Google Analytics para métricas anónimas de estabilidad. Puede solicitar la eliminación completa de su cuenta y datos desde la sección "Configuración".</p>
 
         <h2>6. Contacto y Reportes</h2>
-        <p>Para reportar contenido ilegal o solicitar soporte: <strong>nicolaspetasne@gmail.com</strong></p>
+        <p>Para reportar contenido ilegal o solicitar soporte, contacte a: <strong>nicolaspetasne@gmail.com</strong></p>
     </div>
 </body>
 </html>
