@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniStation Pro - Domina tu Carrera</title>
-    <meta name="description" content="La suite definitiva para estudiantes de ingeniería. Organiza materias, archivos, comunidad y apuntes en una sola app offline.">
+    <meta name="description" content="La suite definitiva para estudiantes de ingeniería. Organiza materias, archivos, comunidad y apuntes en una sola app offline y social.">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Iconos -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Animaciones AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -34,7 +30,7 @@
                             500: '#3b82f6',
                             600: '#2563eb',
                             900: '#1e3a8a',
-                            950: '#0f172a', // Más oscuro que gray-900
+                            950: '#0f172a', 
                         }
                     }
                 }
@@ -46,11 +42,11 @@
         body { background-color: #0f172a; color: white; }
         
         .hero-glow {
-            background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(15, 23, 42, 0) 70%);
+            background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
         }
         
         .feature-card {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(148, 163, 184, 0.1);
             transition: all 0.3s ease;
@@ -58,32 +54,42 @@
         
         .feature-card:hover {
             border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(30, 41, 59, 0.7);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
         }
 
-        /* Mockup CSS Puro para reflejar la App Real */
+        /* --- MOCKUP CSS PURO --- */
         .app-window {
-            background: #111827;
-            border: 1px solid #374151;
+            background: #020617; /* Muy oscuro, casi negro */
+            border: 1px solid #1e293b;
             border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
             overflow: hidden;
+            font-family: 'Inter', sans-serif;
         }
         
         .sidebar-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 12px;
-            border-radius: 6px;
-            color: #9ca3af;
+            gap: 12px;
+            padding: 10px 16px;
+            color: #94a3b8; /* text-slate-400 */
             font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
         }
+        .sidebar-item:hover { color: white; }
         .sidebar-item.active {
-            background: rgba(59, 130, 246, 0.1);
-            color: #60a5fa;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: rgba(30, 58, 138, 0.3); /* blue-900/30 */
+            color: #60a5fa; /* blue-400 */
+            border-right: 2px solid #3b82f6;
+        }
+
+        .stat-card {
+            background-color: #0f172a; /* slate-950 */
+            border: 1px solid #1e293b; /* slate-800 */
+            border-radius: 12px;
         }
         
         .gradient-text {
@@ -99,189 +105,307 @@
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden">
+<body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
-    <!-- NAV -->
     <nav class="fixed w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
                     <div class="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-lg shadow-lg shadow-blue-900/20">
-                        <i data-lucide="graduation-cap" class="text-white w-6 h-6"></i>
+                        <i data-lucide="graduation-cap" class="text-white w-5 h-5"></i>
                     </div>
                     <span class="font-heading font-bold text-xl tracking-tight">UniStation Pro</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Características</a>
-                    <a href="#careers" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Carreras</a>
+                    <a href="#features" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Novedades</a>
+                    <a href="#gamification" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Nivel</a>
+                    <a href="#social" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Comunidad</a>
                     
                     <a href="https://cafecito.app/nicopet" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm border border-gray-700 px-4 py-2 rounded-full hover:bg-gray-800 hover:border-yellow-500/50 group">
                         <i data-lucide="coffee" class="w-4 h-4 text-yellow-500 group-hover:animate-bounce"></i>
                         <span>Invítame un café</span>
                     </a>
 
-                    <!-- BOTÓN NAV ACTUALIZADO A AZUL -->
-                    <a href="#download" class="bg-blue-600 text-white hover:bg-blue-500 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-900/30 hover:shadow-blue-600/40 hover:scale-105">
-                        Descargar v1.0.8
+                    <a href="#download" class="bg-blue-600 text-white hover:bg-blue-500 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-900/30 hover:shadow-blue-600/40 hover:scale-105 flex items-center gap-2">
+                        <i data-lucide="download" size="16"></i> Descargar v1.1.0
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="hero-glow pt-32 pb-24 lg:pt-48 lg:pb-40 px-4 relative">
+    <header class="hero-glow pt-32 pb-24 lg:pt-48 lg:pb-32 px-4 relative">
         <div class="max-w-7xl mx-auto text-center relative z-10">
             
-            <div data-aos="fade-up" class="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-950/50 rounded-full border border-blue-800/50 shadow-lg shadow-blue-900/20">
-                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                Nueva Versión v1.0.8
+            <div data-aos="fade-up" class="inline-flex items-center gap-2 px-4 py-2 mb-8 text-xs font-bold tracking-widest text-blue-300 uppercase bg-blue-950/40 rounded-full border border-blue-800/50 shadow-lg shadow-blue-900/10 backdrop-blur-sm hover:border-blue-500/50 transition-colors cursor-default">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Nueva Actualización: Social & Audio
             </div>
 
             <h1 data-aos="fade-up" data-aos-delay="100" class="font-heading text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
-                Deja de estudiar con <br>
-                <span class="gradient-text">50 pestañas abiertas</span>
+                Tu cursada universitaria <br>
+                <span class="gradient-text">sube de nivel</span>
             </h1>
             
             <p data-aos="fade-up" data-aos-delay="200" class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
-                UniStation Pro centraliza tus materias, archivos, correos, calendario y comunidad en una sola app potente. 
-                <strong class="text-gray-100">100% Offline first.</strong> Tus datos son tuyos.
+                Organiza materias, únete a grupos de estudio, gana XP por aprobar y estudia sin distracciones. 
+                <strong class="text-gray-200">Todo en una sola app para Windows.</strong>
             </p>
             
             <div data-aos="fade-up" data-aos-delay="300" class="mt-10 flex flex-col sm:flex-row justify-center gap-4 items-center">
                 <a href="#download" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-3 text-lg hover:scale-105">
-                    <i data-lucide="download"></i> Descargar para Windows
+                    <i data-lucide="windows"></i> Descargar Gratis
                 </a>
-                <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-gray-800/50 hover:bg-gray-800 border border-gray-700 text-gray-200 font-semibold rounded-xl transition-all flex items-center justify-center gap-2">
+                <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-gray-800/50 hover:bg-gray-800 border border-gray-700 text-gray-200 font-semibold rounded-xl transition-all flex items-center justify-center gap-2 hover:border-gray-600">
                     Ver Funcionalidades
                 </a>
             </div>
 
-            <!-- MOCKUP DE LA APP (Reflejando la UI real) -->
-            <div data-aos="fade-up" data-aos-delay="500" class="mt-20 relative max-w-6xl mx-auto app-window aspect-[16/10] md:aspect-[16/9] flex text-left select-none transform md:rotate-x-12 perspective-1000">
+            <div data-aos="fade-up" data-aos-delay="500" class="mt-20 relative max-w-7xl mx-auto app-window aspect-[16/10] md:aspect-[16/9] flex text-left select-none transform md:rotate-x-12 perspective-1000 border-t border-gray-700/50">
                 
-                <!-- Sidebar -->
-                <div class="w-16 md:w-64 bg-gray-900 border-r border-gray-800 p-4 flex flex-col gap-2 shrink-0">
-                    <div class="flex items-center gap-2 px-2 mb-6 text-blue-500">
-                        <i data-lucide="graduation-cap"></i>
-                        <span class="font-bold text-white hidden md:block">UniStation</span>
+                <div class="w-16 md:w-64 bg-[#0B1120] border-r border-gray-800 flex flex-col shrink-0 py-6">
+                    <div class="flex items-center gap-3 px-6 mb-8 text-blue-500">
+                        <i data-lucide="graduation-cap" size="28"></i>
+                        <span class="font-bold text-white text-lg hidden md:block">UniStation</span>
                     </div>
                     
-                    <!-- Items Menú -->
-                    <div class="sidebar-item active"><i data-lucide="layout-dashboard" size="18"></i> <span class="hidden md:block">Dashboard</span></div>
-                    <div class="sidebar-item"><i data-lucide="book-open" size="18"></i> <span class="hidden md:block">Materias</span></div>
-                    <div class="sidebar-item"><i data-lucide="check-square" size="18"></i> <span class="hidden md:block">Tareas</span></div>
-                    <div class="sidebar-item"><i data-lucide="clipboard-list" size="18"></i> <span class="hidden md:block">Exámenes</span></div>
-                    <div class="sidebar-item"><i data-lucide="calendar" size="18"></i> <span class="hidden md:block">Calendario</span></div>
-                    <div class="sidebar-item"><i data-lucide="mail" size="18"></i> <span class="hidden md:block">Correo</span></div>
-                    <div class="sidebar-item"><i data-lucide="globe" size="18"></i> <span class="hidden md:block">Facultad</span></div>
-                    <div class="sidebar-item"><i data-lucide="folder" size="18"></i> <span class="hidden md:block">Archivos</span></div>
-                    <div class="sidebar-item"><i data-lucide="sticky-note" size="18"></i> <span class="hidden md:block">Apuntes</span></div>
-                    <div class="sidebar-item"><i data-lucide="clock" size="18"></i> <span class="hidden md:block">Focus</span></div>
-                    
-                    <div class="my-2 border-t border-gray-800"></div>
-                    
-                    <div class="sidebar-item text-gray-500"><i data-lucide="coffee" size="18"></i> <span class="hidden md:block">Grupos</span></div>
-                    <div class="sidebar-item text-gray-500"><i data-lucide="users" size="18"></i> <span class="hidden md:block">Comunidad</span></div>
+                    <div class="flex-1 space-y-1 px-3">
+                        <div class="sidebar-item active"><i data-lucide="layout-dashboard" size="18"></i> <span class="hidden md:block">Dashboard</span></div>
+                        <div class="sidebar-item"><i data-lucide="book-open" size="18"></i> <span class="hidden md:block">Materias</span></div>
+                        <div class="sidebar-item"><i data-lucide="clipboard-list" size="18"></i> <span class="hidden md:block">Exámenes</span></div>
+                        <div class="sidebar-item"><i data-lucide="check-square" size="18"></i> <span class="hidden md:block">Tareas</span></div>
+                        <div class="sidebar-item"><i data-lucide="target" size="18"></i> <span class="hidden md:block">Objetivos</span></div>
+                        <div class="sidebar-item"><i data-lucide="calendar" size="18"></i> <span class="hidden md:block">Calendario</span></div>
+                        <div class="sidebar-item"><i data-lucide="mail" size="18"></i> <span class="hidden md:block">Correo</span></div>
+                        <div class="sidebar-item"><i data-lucide="globe" size="18"></i> <span class="hidden md:block">Facultad</span></div>
+                        <div class="sidebar-item"><i data-lucide="folder" size="18"></i> <span class="hidden md:block">Archivos</span></div>
+                        <div class="sidebar-item"><i data-lucide="sticky-note" size="18"></i> <span class="hidden md:block">Apuntes</span></div>
+                        <div class="sidebar-item"><i data-lucide="clock" size="18"></i> <span class="hidden md:block">Focus</span></div>
+                    </div>
+
+                    <div class="mt-4 px-3 space-y-1">
+                        <div class="sidebar-item text-purple-400"><i data-lucide="message-circle" size="18"></i> <span class="hidden md:block">Contacto</span></div>
+                        <div class="sidebar-item text-yellow-500"><i data-lucide="heart" size="18"></i> <span class="hidden md:block">Ayuda al Creador</span></div>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-800 flex items-center gap-3 px-3">
+                            <div class="w-8 h-8 rounded-full bg-gray-700 border border-gray-600 flex items-center justify-center text-lg">🐵</div>
+                            <div class="hidden md:block">
+                                <p class="text-xs font-bold text-white">Nico</p>
+                                <p class="text-[10px] text-gray-500">Ingeniería en Sistemas</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Área Principal -->
-                <div class="flex-1 bg-gray-950 p-8 flex flex-col relative">
-                    <!-- Header Falso -->
-                    <div class="flex justify-between items-end mb-8">
+                <div class="flex-1 bg-[#020617] p-8 flex flex-col relative overflow-hidden">
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
                         <div>
-                            <h2 class="text-3xl font-bold text-white">Ingeniería en Sistemas</h2>
-                            <p class="text-gray-400 text-sm mt-1">Progreso de Carrera: 32%</p>
+                            <h2 class="text-3xl font-bold text-white flex items-center gap-2">Hola, Nico <span class="text-2xl">👋</span></h2>
+                            <p class="text-gray-400 text-sm mt-1">Aquí tienes tu resumen al día.</p>
                         </div>
-                        <div class="flex gap-3">
-                            <div class="bg-gray-800 px-4 py-2 rounded-lg border border-gray-700">
-                                <p class="text-[10px] uppercase font-bold text-gray-500">Promedio</p>
-                                <p class="text-xl font-bold text-blue-400">8.50</p>
+                        
+                        <div class="flex gap-4">
+                            <div class="bg-[#0F172A] border border-yellow-600/30 rounded-lg p-3 w-64 relative overflow-hidden">
+                                <div class="flex justify-between items-start relative z-10">
+                                    <div>
+                                        <p class="text-[10px] text-yellow-500 font-bold uppercase flex items-center gap-1"><i data-lucide="zap" size="10"></i> Nivel 70</p>
+                                        <p class="text-sm font-bold text-white">Ingeniero Especialista</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <i data-lucide="trophy" class="text-yellow-500/20 w-8 h-8 absolute top-0 right-0"></i>
+                                        <p class="text-[10px] text-gray-400 font-mono mt-1">3663 / 16372 XP</p>
+                                    </div>
+                                </div>
+                                <div class="w-full h-1 bg-gray-800 rounded-full mt-2 relative z-10">
+                                    <div class="h-full bg-yellow-500 w-[20%]"></div>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#0F172A] border border-blue-900/30 rounded-lg p-3 w-40 flex items-center justify-between relative overflow-hidden">
+                                <div>
+                                    <p class="text-[10px] text-blue-400 font-bold uppercase">Tu Avance</p>
+                                    <p class="text-2xl font-bold text-white">33%</p>
+                                    <p class="text-[8px] text-gray-500 uppercase">Completado</p>
+                                </div>
+                                <div class="relative w-10 h-10">
+                                    <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                        <path class="text-gray-800" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" />
+                                        <path class="text-blue-500" stroke-dasharray="33, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Grid Widgets -->
-                    <div class="grid grid-cols-3 gap-6 mb-8">
-                        <div class="p-5 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border-l-4 border-yellow-500">
-                            <p class="text-xs font-bold text-gray-400 uppercase">Cursando</p>
-                            <p class="text-3xl font-bold text-white mt-2">5</p>
+                    <div class="flex flex-col md:flex-row gap-6 mb-6 h-auto md:h-64">
+                        <div class="flex-[2] bg-gradient-to-br from-blue-900/10 to-[#0F172A] border border-blue-500/20 rounded-xl p-6 relative overflow-hidden flex flex-col justify-between">
+                            <i data-lucide="calendar" class="absolute top-8 right-8 text-white/5 w-40 h-40"></i>
+                            
+                            <div class="relative z-10">
+                                <p class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Próximos Exámenes</p>
+                                <h3 class="text-3xl font-bold text-white mb-1">Final Sistemas Operativos</h3>
+                                <p class="text-lg text-gray-400 font-light">Sistemas Operativos</p>
+                                <div class="mt-4 inline-block bg-blue-900/30 border border-blue-500/30 rounded px-3 py-1 text-xs font-bold text-blue-200 uppercase">
+                                    Martes, 16 de Diciembre
+                                </div>
+                            </div>
+
+                            <div class="relative z-10 flex items-end justify-between mt-4 md:mt-0">
+                                <button class="w-full md:w-auto px-6 py-2 bg-[#1E293B] hover:bg-gray-700 text-gray-300 text-sm font-bold rounded-lg border border-gray-600 transition-colors">Ver Exámenes</button>
+                                <div class="text-right hidden md:block">
+                                    <p class="text-xs text-gray-500">Faltan</p>
+                                    <p class="text-4xl font-bold text-red-500">1</p>
+                                    <p class="text-xs text-gray-500">días</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-5 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border-l-4 border-emerald-500">
-                            <p class="text-xs font-bold text-gray-400 uppercase">Aprobadas</p>
-                            <p class="text-3xl font-bold text-white mt-2">14</p>
-                        </div>
-                        <div class="p-5 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border-l-4 border-blue-500">
-                            <p class="text-xs font-bold text-gray-400 uppercase">Pendientes Hoy</p>
-                            <p class="text-3xl font-bold text-white mt-2">3</p>
+
+                        <div class="flex-1 bg-[#0F172A] border border-gray-800 rounded-xl p-5 flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="font-bold text-white flex items-center gap-2"><i data-lucide="message-circle" size="18"></i> Mensajes</h3>
+                                <span class="bg-gray-800 border border-gray-700 text-xs px-2 py-0.5 rounded text-gray-300">2 Nuevos</span>
+                            </div>
+                            
+                            <div class="flex-1 flex flex-col justify-center">
+                                <div class="bg-black/20 p-4 rounded-lg border border-gray-700/50 relative">
+                                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-lg"></div>
+                                    <p class="text-sm font-bold text-white">Tom, Franco y Nico</p>
+                                    <div class="mt-1 pl-2 border-l-2 border-gray-600">
+                                        <p class="text-xs text-blue-400 font-bold">Tomas:</p>
+                                        <p class="text-xs text-gray-400 italic">"Hay que hacer el tp 3"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full mt-4 bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2">
+                                Ver Mensaje <i data-lucide="arrow-right" size="14"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Lista Materias -->
-                    <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-4 flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <div class="w-3 h-3 rounded-full bg-blue-500"></div>
-                            <span class="font-bold">Análisis de Sistemas</span>
-                            <span class="ml-auto text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">CURSANDO</span>
+                    <div class="flex flex-col md:flex-row gap-6 h-auto md:h-48">
+                        <div class="flex-1 grid grid-cols-2 gap-3">
+                            <div class="bg-[#0F172A] border border-blue-500/30 rounded-xl p-3 flex flex-col justify-between">
+                                <div class="flex items-center gap-2 text-blue-400 text-[10px] font-bold uppercase"><i data-lucide="book-open" size="12"></i> Cursando</div>
+                                <p class="text-2xl font-bold text-white text-right">2</p>
+                            </div>
+                            <div class="bg-[#0F172A] border border-orange-500/30 rounded-xl p-3 flex flex-col justify-between">
+                                <div class="flex items-center gap-2 text-orange-400 text-[10px] font-bold uppercase leading-tight"><i data-lucide="alert-circle" size="12"></i> Finales <br>Pendientes</div>
+                                <p class="text-2xl font-bold text-white text-right">1</p>
+                            </div>
+                            <div class="bg-[#0F172A] border border-green-500/30 rounded-xl p-3 flex flex-col justify-between">
+                                <div class="flex items-center gap-2 text-green-400 text-[10px] font-bold uppercase"><i data-lucide="check-circle" size="12"></i> Aprobadas</div>
+                                <p class="text-2xl font-bold text-white text-right">13</p>
+                            </div>
+                            <div class="bg-[#0F172A] border border-purple-500/30 rounded-xl p-3 flex flex-col justify-between">
+                                <div class="flex items-center gap-2 text-purple-400 text-[10px] font-bold uppercase"><i data-lucide="trending-up" size="12"></i> Promedio</div>
+                                <p class="text-2xl font-bold text-white text-right">8.17</p>
+                            </div>
                         </div>
-                        <div class="h-px bg-gray-800 w-full mb-4"></div>
-                        <div class="flex items-center gap-2 mb-4">
-                            <div class="w-3 h-3 rounded-full bg-purple-500"></div>
-                            <span class="font-bold">Sintaxis y Semántica</span>
-                            <span class="ml-auto text-xs bg-gray-800 px-2 py-1 rounded text-gray-300">CURSANDO</span>
+
+                        <div class="flex-1 bg-[#0F172A] border border-gray-800 rounded-xl p-4 flex flex-col">
+                            <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2"><i data-lucide="clock" size="14" class="text-blue-400"></i> Próximas Tareas</h4>
+                            <div class="bg-gray-900/50 border border-gray-700/50 rounded p-2 flex justify-between items-center mb-auto">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-1 h-8 bg-gray-600 rounded"></div>
+                                    <div>
+                                        <p class="text-xs font-bold text-white">Terminar TP 3</p>
+                                        <p class="text-[10px] text-gray-500">SySL</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded">19 DIC</span>
+                            </div>
+                            <button class="w-full mt-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                                <i data-lucide="plus" size="12"></i> Crear nueva tarea
+                            </button>
+                        </div>
+
+                        <div class="flex-1 bg-[#0F172A] border border-gray-800 rounded-xl p-4 flex flex-col">
+                            <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2"><i data-lucide="target" size="14" class="text-emerald-400"></i> Próximos Objetivos</h4>
+                            <div class="bg-gray-900/50 border border-gray-700/50 rounded p-2 flex items-center gap-2 mb-auto">
+                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                                <div>
+                                    <p class="text-xs font-bold text-white">Leer libro Año del Desierto</p>
+                                    <p class="text-[10px] text-gray-500">Vence el 20 dic</p>
+                                </div>
+                            </div>
+                            <button class="w-full mt-2 bg-emerald-600 hover:bg-emerald-500 text-white py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                                <i data-lucide="plus" size="12"></i> Crear nuevo objetivo
+                            </button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- CAREERS SECTION (NEW!) -->
-    <section id="careers" class="py-20 bg-gray-950 border-y border-gray-800">
+    <section id="gamification" class="py-20 bg-gray-950 border-y border-gray-800">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Empieza en segundos, no en horas</h2>
-                <p class="text-gray-400">Selecciona tu carrera y carga automáticamente todo el plan de estudios oficial.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-blue-500 transition-colors group">
-                    <div class="bg-blue-900/20 p-3 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors text-blue-400"><i data-lucide="monitor"></i></div>
-                    <span class="font-bold text-sm">Ing. Sistemas</span>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1" data-aos="fade-right">
+                    <div class="inline-block p-3 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 mb-6">
+                        <i data-lucide="trophy" class="w-8 h-8 text-yellow-500"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Estudiar ahora es un juego</h2>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        Convierte tu progreso académico en una experiencia RPG. Gana experiencia (XP) completando tareas, aprobando parciales y manteniendo tu asistencia.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-xs">1</div>
+                            <span class="text-gray-300">Desbloquea <strong>Avatares</strong> únicos al subir de nivel.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">2</div>
+                            <span class="text-gray-300">Consigue títulos como <em>"Veterano de la Cursada"</em>.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 font-bold text-xs">3</div>
+                            <span class="text-gray-300">Visualiza tu progreso con barras de XP reales.</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-yellow-500 transition-colors group">
-                    <div class="bg-yellow-900/20 p-3 rounded-full group-hover:bg-yellow-600 group-hover:text-white transition-colors text-yellow-400"><i data-lucide="zap"></i></div>
-                    <span class="font-bold text-sm">Ing. Eléctrica</span>
-                </div>
-                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-red-500 transition-colors group">
-                    <div class="bg-red-900/20 p-3 rounded-full group-hover:bg-red-600 group-hover:text-white transition-colors text-red-400"><i data-lucide="wrench"></i></div>
-                    <span class="font-bold text-sm">Ing. Mecánica</span>
-                </div>
-                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-green-500 transition-colors group">
-                    <div class="bg-green-900/20 p-3 rounded-full group-hover:bg-green-600 group-hover:text-white transition-colors text-green-400"><i data-lucide="flask-conical"></i></div>
-                    <span class="font-bold text-sm">Ing. Química</span>
-                </div>
-                <!-- Fila 2 -->
-                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-purple-500 transition-colors group">
-                    <div class="bg-purple-900/20 p-3 rounded-full group-hover:bg-purple-600 group-hover:text-white transition-colors text-purple-400"><i data-lucide="cpu"></i></div>
-                    <span class="font-bold text-sm">Ing. Electrónica</span>
-                </div>
-                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-orange-500 transition-colors group">
-                    <div class="bg-orange-900/20 p-3 rounded-full group-hover:bg-orange-600 group-hover:text-white transition-colors text-orange-400"><i data-lucide="factory"></i></div>
-                    <span class="font-bold text-sm">Ing. Industrial</span>
-                </div>
-                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-pink-500 transition-colors group">
-                    <div class="bg-pink-900/20 p-3 rounded-full group-hover:bg-pink-600 group-hover:text-white transition-colors text-pink-400"><i data-lucide="mic"></i></div>
-                    <span class="font-bold text-sm">Com. Periodística</span>
-                </div>
-                <div class="p-4 bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center gap-3 hover:border-gray-500 transition-colors group">
-                    <div class="bg-gray-800 p-3 rounded-full group-hover:bg-gray-600 group-hover:text-white transition-colors text-gray-400"><i data-lucide="plus"></i></div>
-                    <span class="font-bold text-sm">Manual / Otra</span>
+                <div class="flex-1 relative" data-aos="fade-left">
+                    <div class="absolute top-0 right-10 bg-gray-800 p-4 rounded-xl border border-yellow-500/30 shadow-xl z-10 animate-bounce" style="animation-duration: 3s;">
+                        <div class="text-center">
+                            <div class="text-3xl mb-1">🦁</div>
+                            <div class="text-xs font-bold text-yellow-500 uppercase">Nivel 10</div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl relative overflow-hidden">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 rounded-full bg-gray-800 border-2 border-blue-500 flex items-center justify-center text-3xl">🦊</div>
+                            <div class="flex-1">
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-bold">Novato Universitario</span>
+                                    <span class="text-xs text-blue-400 font-mono">350 / 500 XP</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-blue-500 w-[70%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between text-sm p-2 bg-gray-800/50 rounded border border-gray-700">
+                                <span class="text-gray-300 flex items-center gap-2"><i data-lucide="check-circle" size="14" class="text-green-500"></i> Tarea completada</span>
+                                <span class="text-yellow-400 font-bold text-xs">+20 XP</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm p-2 bg-gray-800/50 rounded border border-gray-700">
+                                <span class="text-gray-300 flex items-center gap-2"><i data-lucide="book-open" size="14" class="text-blue-500"></i> Final aprobado</span>
+                                <span class="text-yellow-400 font-bold text-xs">+500 XP</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES GRID (EXPANDED) -->
     <section id="features" class="py-24 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4">
             
@@ -290,7 +414,6 @@
                 <p class="text-gray-400 text-lg">Olvídate de Excel, Notion y el bloc de notas. Todo está aquí.</p>
             </div>
 
-            <!-- BLOQUE 1: ORGANIZACIÓN ACADÉMICA -->
             <div class="mb-16">
                 <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="book-open" class="text-blue-500"></i> Gestión Académica</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -300,7 +423,7 @@
                             <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400"><i data-lucide="target"></i></div>
                             <h4 class="font-bold text-lg">Control de Materias</h4>
                         </div>
-                        <p class="text-gray-400 text-sm">Sigue el estado de cada materia (cursada/aprobada). Controla <strong>asistencia</strong>, notas de parciales y objetivos para llegar al final.</p>
+                        <p class="text-gray-400 text-sm">Gestiona estados (Cursando, Final Pendiente, Aprobada). Controla tu <strong>asistencia</strong>, notas de parciales y promedio en tiempo real.</p>
                     </div>
 
                     <div class="feature-card p-6 rounded-2xl">
@@ -308,148 +431,120 @@
                             <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400"><i data-lucide="clipboard-list"></i></div>
                             <h4 class="font-bold text-lg">Exámenes y Entregas</h4>
                         </div>
-                        <p class="text-gray-400 text-sm">Agenda tus parciales y entregas. Visualiza la cuenta regresiva y anota qué temas entran en cada examen.</p>
+                        <p class="text-gray-400 text-sm">Agenda tus parciales. Visualiza la cuenta regresiva en el Dashboard y anota los temas que entran en cada examen.</p>
                     </div>
 
                     <div class="feature-card p-6 rounded-2xl">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400"><i data-lucide="calendar"></i></div>
-                            <h4 class="font-bold text-lg">Cronograma y Calendario</h4>
+                            <h4 class="font-bold text-lg">Cronograma Visual</h4>
                         </div>
-                        <p class="text-gray-400 text-sm">Visualiza tus horarios de cursada semanal y un calendario mensual con todas tus fechas clave unificadas.</p>
+                        <p class="text-gray-400 text-sm">Visualiza tus horarios de cursada semanal tipo grilla y un calendario mensual con todas tus fechas clave unificadas.</p>
                     </div>
 
                 </div>
             </div>
 
-            <!-- BLOQUE 2: PRODUCTIVIDAD Y HERRAMIENTAS -->
             <div class="mb-16">
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="zap" class="text-yellow-500"></i> Productividad y Estudio</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="zap" class="text-yellow-500"></i> Productividad Focus</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
-                    <div class="feature-card p-6 rounded-2xl">
-                        <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400 mb-4"><i data-lucide="check-circle"></i></div>
-                        <h4 class="font-bold text-lg mb-2">Gestor de Tareas</h4>
-                        <p class="text-gray-400 text-sm">Sistema tipo Kanban. Organiza tus pendientes en "Por hacer", "En progreso" y "Hecho". Asigna tareas a materias específicas.</p>
+                    <div class="feature-card p-6 rounded-2xl border-l-4 border-l-yellow-500">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400"><i data-lucide="check-circle"></i></div>
+                            <span class="text-xs font-bold text-gray-500 bg-gray-800 px-2 py-1 rounded border border-gray-700">KANBAN</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Gestor de Tareas Drag & Drop</h4>
+                        <p class="text-gray-400 text-sm">Organiza tus pendientes. Arrastra tarjetas entre "Pendiente", "En Progreso" y "Hecho". Siente la satisfacción del nuevo efecto de sonido al completar.</p>
                     </div>
 
-                    <div class="feature-card p-6 rounded-2xl">
-                        <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400 mb-4"><i data-lucide="clock"></i></div>
+                    <div class="feature-card p-6 rounded-2xl border-l-4 border-l-red-500">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400"><i data-lucide="clock"></i></div>
+                            <span class="text-xs font-bold text-gray-500 bg-gray-800 px-2 py-1 rounded border border-gray-700">PiP MODE</span>
+                        </div>
                         <h4 class="font-bold text-lg mb-2">Pomodoro Flotante</h4>
-                        <p class="text-gray-400 text-sm">Temporizador Focus integrado con modo "Picture-in-Picture" para que estudies sin distraerte, navegues donde navegues.</p>
-                    </div>
-
-                    <div class="feature-card p-6 rounded-2xl">
-                        <div class="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400 mb-4"><i data-lucide="sticky-note"></i></div>
-                        <h4 class="font-bold text-lg mb-2">Apuntes con Formato</h4>
-                        <p class="text-gray-400 text-sm">Editor de texto rico. Crea resúmenes con negritas, listas y formato real. Todo guardado localmente en tu PC.</p>
-                    </div>
-
-                    <div class="feature-card p-6 rounded-2xl">
-                        <div class="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center text-teal-400 mb-4"><i data-lucide="target"></i></div>
-                        <h4 class="font-bold text-lg mb-2">Planificador de Objetivos</h4>
-                        <p class="text-gray-400 text-sm">Define metas a corto y largo plazo. Visualiza tu progreso y mantén la motivación durante el cuatrimestre.</p>
+                        <p class="text-gray-400 text-sm">Estudia sin distraerte. El temporizador se puede desacoplar en una mini-ventana que flota sobre tus apuntes o PDFs mientras estudias.</p>
                     </div>
 
                 </div>
             </div>
 
-            <!-- BLOQUE 3: TU ESPACIO DIGITAL -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="hard-drive" class="text-pink-500"></i> Tu Espacio Digital</h3>
+            <div id="social">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="users" class="text-indigo-400"></i> Comunidad y Grupos <span class="bg-indigo-500/20 text-indigo-300 text-[10px] px-2 py-0.5 rounded border border-indigo-500/30 uppercase">Nuevo</span></h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     
-                    <div class="feature-card p-6 rounded-2xl bg-gray-800/80 border-pink-500/30 border relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-pink-600/10 rounded-full blur-2xl transition-all group-hover:bg-pink-600/20"></div>
-                        <div class="relative z-10">
-                            <div class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center text-pink-400 mb-4"><i data-lucide="folder-open"></i></div>
-                            <h4 class="font-bold text-lg mb-2">Sistema de Archivos Real</h4>
-                            <p class="text-gray-400 text-sm">No es solo una lista. Crea carpetas, sube PDFs, arrastra y suelta archivos como en Windows. Todo queda ordenado en tu carpeta local de Documentos.</p>
-                        </div>
+                    <div class="feature-card p-6 rounded-2xl group hover:border-indigo-500">
+                        <div class="mb-4 text-indigo-400 group-hover:scale-110 transition-transform"><i data-lucide="coffee" size="32"></i></div>
+                        <h4 class="font-bold text-lg text-white mb-2">Grupos de Estudio</h4>
+                        <p class="text-gray-400 text-sm">Crea o únete a grupos privados mediante ID. Chatea en tiempo real con tus compañeros de cursada.</p>
                     </div>
 
-                    <div class="feature-card p-6 rounded-2xl">
-                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 mb-4"><i data-lucide="mail"></i></div>
-                        <h4 class="font-bold text-lg mb-2">Correo Integrado</h4>
-                        <p class="text-gray-400 text-sm">Accede a tu Gmail o Outlook universitario sin salir de la app. Mantén tu comunicación académica separada de la personal.</p>
+                    <div class="feature-card p-6 rounded-2xl group hover:border-pink-500">
+                        <div class="mb-4 text-pink-400 group-hover:scale-110 transition-transform"><i data-lucide="search" size="32"></i></div>
+                        <h4 class="font-bold text-lg text-white mb-2">Buscador de Compañeros</h4>
+                        <p class="text-gray-400 text-sm">¿Te falta gente para el TP? Publica una búsqueda filtrando por universidad, carrera y materia.</p>
                     </div>
 
-                    <div class="feature-card p-6 rounded-2xl">
-                        <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400 mb-4"><i data-lucide="globe"></i></div>
-                        <h4 class="font-bold text-lg mb-2">Portal de Facultad</h4>
-                        <p class="text-gray-400 text-sm">Navega en el Guaraní, Sysacad o el campus virtual de tu facultad directamente desde UniStation. Login persistente.</p>
+                    <div class="feature-card p-6 rounded-2xl group hover:border-green-500">
+                        <div class="mb-4 text-green-400 group-hover:scale-110 transition-transform"><i data-lucide="folder-down" size="32"></i></div>
+                        <h4 class="font-bold text-lg text-white mb-2">Recursos Compartidos</h4>
+                        <p class="text-gray-400 text-sm">Accede a una biblioteca comunitaria de resúmenes y exámenes pasados subidos por otros estudiantes.</p>
                     </div>
 
                 </div>
             </div>
 
-            <!-- BLOQUE 4: COMUNIDAD Y SOCIAL -->
-            <div>
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="users" class="text-blue-400"></i> Conecta y Aprueba</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <div class="feature-card p-8 rounded-3xl relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400"><i data-lucide="coffee"></i></div>
-                                <h4 class="font-bold text-xl text-white">Grupos de Estudio</h4>
-                            </div>
-                            <p class="text-gray-400 mb-4">¿Estudiar solo? Jamás. Únete a grupos privados mediante ID, chatea en tiempo real, y comparte archivos con tus compañeros de cursada.</p>
-                            <ul class="space-y-2 text-sm text-gray-300">
-                                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-blue-500"></i> Chat en tiempo real</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-blue-500"></i> Compartir archivos y recursos</li>
-                                <li class="flex items-center gap-2"><i data-lucide="check" size="14" class="text-blue-500"></i> Grupos privados y seguros</li>
-                            </ul>
-                        </div>
+            <div class="mt-16 pt-10 border-t border-gray-800">
+                <h3 class="text-xl font-bold text-white mb-6 text-center">Tecnología diseñada para estudiantes</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
+                        <i data-lucide="wifi-off" class="mx-auto mb-2 text-gray-400"></i>
+                        <h4 class="font-bold text-sm">Offline First</h4>
+                        <p class="text-xs text-gray-500 mt-1">Funciona sin internet</p>
                     </div>
-
-                    <div class="feature-card p-8 rounded-3xl relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                        <div class="relative z-10">
-                            <div class="flex items-center gap-4 mb-4">
-                                <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400"><i data-lucide="library"></i></div>
-                                <h4 class="font-bold text-xl text-white">Comunidad y Tutores</h4>
-                            </div>
-                            <p class="text-gray-400 mb-4">Accede a un banco de apuntes y exámenes subidos por otros estudiantes. Filtra por universidad, materia o tipo de archivo.</p>
-                            <div class="flex gap-4 mt-6">
-                                <div class="bg-gray-900/50 p-3 rounded-lg border border-gray-700 flex-1">
-                                    <div class="text-xs text-gray-500 uppercase font-bold mb-1">Mercado de Tutores</div>
-                                    <p class="text-sm text-gray-300">Contacta profes particulares validados.</p>
-                                </div>
-                                <div class="bg-gray-900/50 p-3 rounded-lg border border-gray-700 flex-1">
-                                    <div class="text-xs text-gray-500 uppercase font-bold mb-1">Recursos</div>
-                                    <p class="text-sm text-gray-300">Descarga resúmenes y parciales viejos.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
+                        <i data-lucide="cloud" class="mx-auto mb-2 text-blue-400"></i>
+                        <h4 class="font-bold text-sm">Sync Opcional</h4>
+                        <p class="text-xs text-gray-500 mt-1">Respaldo en la Nube</p>
                     </div>
-
+                    <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
+                        <i data-lucide="volume-2" class="mx-auto mb-2 text-purple-400"></i>
+                        <h4 class="font-bold text-sm">Efectos de Sonido</h4>
+                        <p class="text-xs text-gray-500 mt-1">Feedback satisfactorio</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
+                        <i data-lucide="bell" class="mx-auto mb-2 text-yellow-400"></i>
+                        <h4 class="font-bold text-sm">Notificaciones</h4>
+                        <p class="text-xs text-gray-500 mt-1">Integración con Windows</p>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- DOWNLOAD -->
     <section id="download" class="py-24 relative overflow-hidden">
         <div class="absolute inset-0 bg-blue-900/10"></div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Tu semestre, bajo control.</h2>
-            <p class="text-xl text-gray-400 mb-10">Disponible para Windows 10 y 11. Gratis y hecho por un estudiante para estudiantes.</p>
+            <p class="text-xl text-gray-400 mb-10">Disponible para Windows 10 y 11. Gratis, código abierto y hecho por un estudiante para estudiantes.</p>
             
             <div class="flex flex-col items-center gap-6">
-                <!-- BOTÓN FINAL ACTUALIZADO A AZUL -->
-                <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.0.8/UniStation.Pro.Setup.1.0.8.exe" class="group relative px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:bg-blue-500 transition-all hover:scale-105">
+                <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.1.0/UniStation.Pro.Setup.1.1.0.exe" class="group relative px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:bg-blue-500 transition-all hover:scale-105">
                     <div class="flex items-center gap-3">
                         <i data-lucide="windows" class="text-white"></i>
-                        <span>Descargar Instalador v1.0.8</span>
+                        <span>Descargar Instalador v1.1.0</span>
                         <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
                     </div>
                 </a>
                 
                 <div class="flex items-center gap-4 text-sm text-gray-500">
                     <span class="flex items-center gap-1"><i data-lucide="hard-drive" size="14"></i> 100% Local</span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1"><i data-lucide="check" size="14"></i> Auto-Updates</span>
+                    <span>•</span>
+                    <span>v1.1.0 Stable</span>
                 </div>
             </div>
 
@@ -474,7 +569,7 @@
             <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
             <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
         </div>
-        <p>© 2024 UniStation Project.</p>
+        <p>© 2025 UniStation Project. Open Source.</p>
     </footer>
 
     <script>
@@ -482,7 +577,7 @@
         AOS.init({
             duration: 800,
             once: true,
-            offset: 100
+            offset: 50
         });
     </script>
 </body>
