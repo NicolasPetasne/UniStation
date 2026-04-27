@@ -142,7 +142,7 @@
             
             <p data-aos="fade-up" data-aos-delay="200" class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
                 Organiza materias, únete a grupos de estudio, gana XP por aprobar y <strong class="text-white">comparte tu cursada</strong>. 
-                <strong class="text-gray-200">Todo en una sola app para Windows y Linux.</strong>
+                <strong class="text-gray-200">Todo en una sola app para Mac, Windows y Linux.</strong>
             </p>
             
             <div data-aos="fade-up" data-aos-delay="300" class="mt-10 flex flex-col sm:flex-row justify-center gap-4 items-center">
@@ -150,7 +150,7 @@
                     <i data-lucide="download"></i> Descargar Gratis
                 </a>
                 <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-gray-800/50 hover:bg-gray-800 border border-gray-700 text-gray-200 font-semibold rounded-xl transition-all flex items-center justify-center gap-2 hover:border-gray-600">
-                    Ver Funcionalidades
+                    <i data-lucide="layout-grid"></i> Ver Funcionalidades
                 </a>
             </div>
 
@@ -535,14 +535,22 @@
         <div class="absolute inset-0 bg-blue-900/10"></div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Tu semestre, bajo control.</h2>
-            <p class="text-xl text-gray-400 mb-10">Disponible para Windows y Linux. Gratis y hecho por un estudiante para estudiantes.</p>
+            <p class="text-xl text-gray-400 mb-10">Disponible para Mac, Windows y Linux. Gratis y hecho por un estudiante para estudiantes.</p>
             
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+            <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-8">
                 
                 <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.2.7/UniStation.Setup.1.2.7.exe" class="group relative px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:bg-blue-500 transition-all hover:scale-105 w-full sm:w-auto flex justify-center">
                     <div class="flex items-center gap-3">
                         <i data-lucide="monitor" class="text-white"></i>
                         <span>Descargar para Windows</span>
+                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform hidden sm:block"></i>
+                    </div>
+                </a>
+
+                <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.2.7/UniStation.Setup.1.2.7.dmg" class="group relative px-8 py-4 bg-gray-200 text-gray-900 font-bold rounded-full text-lg shadow-lg hover:bg-white hover:shadow-white/20 transition-all hover:scale-105 w-full sm:w-auto flex justify-center">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="apple" class="text-gray-900"></i>
+                        <span>Descargar para Mac</span>
                         <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform hidden sm:block"></i>
                     </div>
                 </a>
@@ -565,6 +573,21 @@
                         Al instalar la app, es posible que aparezca una pantalla azul de <strong>Windows SmartScreen</strong> diciendo "Windows protegió su PC". Esto sucede porque los certificados de verificación oficial cuestan cientos de dólares y este es un proyecto independiente.
                         <br><br>
                         Solo haz clic en <strong class="text-white">"Más información"</strong> y luego en <strong class="text-white">"Ejecutar de todas formas"</strong>. Es 100% seguro.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-4 p-5 bg-blue-900/20 border border-blue-700/30 rounded-xl max-w-2xl mx-auto text-left flex flex-col sm:flex-row items-start gap-4">
+                <i data-lucide="info" class="text-blue-500 shrink-0 sm:mt-0.5"></i>
+                <div>
+                    <p class="text-sm font-bold text-blue-400 mb-1">Aviso para usuarios de Mac</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Es posible que macOS te muestre un error diciendo que <strong class="text-white">"la app está dañada"</strong>. Esto es una protección normal de Apple para apps que no se publican en su tienda oficial. Para solucionarlo:
+                        <br><br>
+                        1. Move la app a tu carpeta de <strong class="text-white">Aplicaciones</strong>.<br>
+                        2. Abrí la <strong class="text-white">Terminal</strong> y pega este comando:<br>
+                        <code class="bg-gray-900 px-2 py-1.5 rounded text-blue-300 mt-2 mb-2 inline-block select-all font-mono border border-gray-700 w-full overflow-x-auto">sudo xattr -rd com.apple.quarantine /Applications/UniStation.app</code><br>
+                        3. Presiona Enter, pon tu contraseña de Mac (no se verá mientras la escribís), ¡y listo! Ya podrás abrirla normalmente.
                     </p>
                 </div>
             </div>
