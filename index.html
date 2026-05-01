@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniStation - Domina tu Carrera</title>
-    <meta name="description" content="La suite definitiva para estudiantes de ingeniería. Organiza materias, archivos, comunidad y apuntes en una sola app offline y social.">
-    
+    <meta name="description"
+        content="La suite definitiva para estudiantes de ingeniería. Organiza materias, archivos, comunidad y apuntes en una sola app offline y social.">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -30,7 +34,7 @@
                             500: '#3b82f6',
                             600: '#2563eb',
                             900: '#1e3a8a',
-                            950: '#0f172a', 
+                            950: '#0f172a',
                         }
                     }
                 }
@@ -39,19 +43,22 @@
     </script>
 
     <style>
-        body { background-color: #0f172a; color: white; }
-        
+        body {
+            background-color: #0f172a;
+            color: white;
+        }
+
         .hero-glow {
             background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
         }
-        
+
         .feature-card {
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(148, 163, 184, 0.1);
             transition: all 0.3s ease;
         }
-        
+
         .feature-card:hover {
             border-color: rgba(59, 130, 246, 0.5);
             background: rgba(30, 41, 59, 0.7);
@@ -67,7 +74,7 @@
             overflow: hidden;
             font-family: 'Inter', sans-serif;
         }
-        
+
         .sidebar-item {
             display: flex;
             align-items: center;
@@ -78,7 +85,11 @@
             font-weight: 500;
             transition: all 0.2s;
         }
-        .sidebar-item:hover { color: white; }
+
+        .sidebar-item:hover {
+            color: white;
+        }
+
         .sidebar-item.active {
             background: rgba(30, 58, 138, 0.3);
             color: #60a5fa;
@@ -90,41 +101,60 @@
             border: 1px solid #1e293b;
             border-radius: 12px;
         }
-        
+
         .gradient-text {
             background: linear-gradient(to right, #60a5fa, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
     </style>
 </head>
+
 <body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
     <nav class="fixed w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <div class="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-lg shadow-lg shadow-blue-900/20">
+                    <div
+                        class="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-lg shadow-lg shadow-blue-900/20">
                         <i data-lucide="graduation-cap" class="text-white w-5 h-5"></i>
                     </div>
                     <span class="font-heading font-bold text-xl tracking-tight">UniStation</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Novedades</a>
-                    <a href="#gamification" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Nivel</a>
-                    <a href="#social" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Comunidad</a>
-                    
-                    <a href="https://cafecito.app/nicopet" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm border border-gray-700 px-4 py-2 rounded-full hover:bg-gray-800 hover:border-yellow-500/50 group">
+                    <a href="#features"
+                        class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Novedades</a>
+                    <a href="#gamification"
+                        class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Nivel</a>
+                    <a href="#social"
+                        class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Comunidad</a>
+
+                    <a href="https://cafecito.app/nicopet" target="_blank"
+                        class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm border border-gray-700 px-4 py-2 rounded-full hover:bg-gray-800 hover:border-yellow-500/50 group">
                         <i data-lucide="coffee" class="w-4 h-4 text-yellow-500 group-hover:animate-bounce"></i>
                         <span>Invítame un café</span>
                     </a>
 
-                    <a href="#download" class="bg-blue-600 text-white hover:bg-blue-500 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-900/30 hover:shadow-blue-600/40 hover:scale-105 flex items-center gap-2">
+                    <a href="#download"
+                        class="bg-blue-600 text-white hover:bg-blue-500 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-900/30 hover:shadow-blue-600/40 hover:scale-105 flex items-center gap-2">
                         <i data-lucide="download" size="16"></i> Descargar v1.2.8
                     </a>
                 </div>
@@ -135,52 +165,74 @@
     <header class="hero-glow pt-32 pb-24 lg:pt-48 lg:pb-32 px-4 relative">
         <div class="max-w-7xl mx-auto text-center relative z-10">
 
-            <h1 data-aos="fade-up" data-aos-delay="100" class="font-heading text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
+            <h1 data-aos="fade-up" data-aos-delay="100"
+                class="font-heading text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
                 Tu cursada universitaria <br>
                 <span class="gradient-text">sube de nivel</span>
             </h1>
-            
-            <p data-aos="fade-up" data-aos-delay="200" class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
-                Organiza materias, únete a grupos de estudio, gana XP por aprobar y <strong class="text-white">comparte tu cursada</strong>. 
-                <strong class="text-gray-200">Todo en una sola app para Mac, Windows y Linux.</strong>
+
+            <p data-aos="fade-up" data-aos-delay="200"
+                class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
+                Organiza materias, únete a grupos de estudio, gana XP por aprobar y <strong class="text-white">comparte
+                    tu cursada</strong>.
+                <strong class="text-gray-200">Todo en una sola app para Mac, Windows, Linux y tu celular.</strong>
             </p>
-            
-            <div data-aos="fade-up" data-aos-delay="300" class="mt-10 flex flex-col sm:flex-row justify-center gap-4 items-center">
-                <a href="#download" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-3 text-lg hover:scale-105">
+
+            <div data-aos="fade-up" data-aos-delay="300"
+                class="mt-10 flex flex-col sm:flex-row justify-center gap-4 items-center">
+                <a href="#download"
+                    class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-3 text-lg hover:scale-105">
                     <i data-lucide="download"></i> Descargar Gratis
                 </a>
-                <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-gray-800/50 hover:bg-gray-800 border border-gray-700 text-gray-200 font-semibold rounded-xl transition-all flex items-center justify-center gap-2 hover:border-gray-600">
+                <a href="#features"
+                    class="w-full sm:w-auto px-8 py-4 bg-gray-800/50 hover:bg-gray-800 border border-gray-700 text-gray-200 font-semibold rounded-xl transition-all flex items-center justify-center gap-2 hover:border-gray-600">
                     <i data-lucide="layout-grid"></i> Ver Funcionalidades
                 </a>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="500" class="mt-20 relative max-w-7xl mx-auto app-window aspect-[16/10] md:aspect-[16/9] flex text-left select-none transform md:rotate-x-12 perspective-1000 border-t border-gray-700/50">
+            <div data-aos="fade-up" data-aos-delay="500"
+                class="mt-20 relative max-w-7xl mx-auto app-window aspect-[16/10] md:aspect-[16/9] flex text-left select-none transform md:rotate-x-12 perspective-1000 border-t border-gray-700/50">
                 <div class="w-16 md:w-64 bg-[#0B1120] border-r border-gray-800 flex flex-col shrink-0 py-6">
                     <div class="flex items-center gap-3 px-6 mb-8 text-blue-500">
                         <i data-lucide="graduation-cap" size="28"></i>
                         <span class="font-bold text-white text-lg hidden md:block">UniStation</span>
                     </div>
-                    
+
                     <div class="flex-1 space-y-1 px-3">
-                        <div class="sidebar-item active"><i data-lucide="layout-dashboard" size="18"></i> <span class="hidden md:block">Dashboard</span></div>
-                        <div class="sidebar-item"><i data-lucide="book-open" size="18"></i> <span class="hidden md:block">Materias</span></div>
-                        <div class="sidebar-item"><i data-lucide="clipboard-list" size="18"></i> <span class="hidden md:block">Exámenes</span></div>
-                        <div class="sidebar-item"><i data-lucide="check-square" size="18"></i> <span class="hidden md:block">Tareas</span></div>
-                        <div class="sidebar-item"><i data-lucide="target" size="18"></i> <span class="hidden md:block">Objetivos</span></div>
-                        <div class="sidebar-item"><i data-lucide="calendar" size="18"></i> <span class="hidden md:block">Calendario</span></div>
-                        <div class="sidebar-item"><i data-lucide="mail" size="18"></i> <span class="hidden md:block">Correo</span></div>
-                        <div class="sidebar-item"><i data-lucide="globe" size="18"></i> <span class="hidden md:block">Facultad</span></div>
-                        <div class="sidebar-item"><i data-lucide="folder" size="18"></i> <span class="hidden md:block">Archivos</span></div>
-                        <div class="sidebar-item"><i data-lucide="sticky-note" size="18"></i> <span class="hidden md:block">Apuntes</span></div>
-                        <div class="sidebar-item"><i data-lucide="clock" size="18"></i> <span class="hidden md:block">Focus</span></div>
+                        <div class="sidebar-item active"><i data-lucide="layout-dashboard" size="18"></i> <span
+                                class="hidden md:block">Dashboard</span></div>
+                        <div class="sidebar-item"><i data-lucide="book-open" size="18"></i> <span
+                                class="hidden md:block">Materias</span></div>
+                        <div class="sidebar-item"><i data-lucide="clipboard-list" size="18"></i> <span
+                                class="hidden md:block">Exámenes</span></div>
+                        <div class="sidebar-item"><i data-lucide="check-square" size="18"></i> <span
+                                class="hidden md:block">Tareas</span></div>
+                        <div class="sidebar-item"><i data-lucide="target" size="18"></i> <span
+                                class="hidden md:block">Objetivos</span></div>
+                        <div class="sidebar-item"><i data-lucide="calendar" size="18"></i> <span
+                                class="hidden md:block">Calendario</span></div>
+                        <div class="sidebar-item"><i data-lucide="mail" size="18"></i> <span
+                                class="hidden md:block">Correo</span></div>
+                        <div class="sidebar-item"><i data-lucide="globe" size="18"></i> <span
+                                class="hidden md:block">Facultad</span></div>
+                        <div class="sidebar-item"><i data-lucide="folder" size="18"></i> <span
+                                class="hidden md:block">Archivos</span></div>
+                        <div class="sidebar-item"><i data-lucide="sticky-note" size="18"></i> <span
+                                class="hidden md:block">Apuntes</span></div>
+                        <div class="sidebar-item"><i data-lucide="clock" size="18"></i> <span
+                                class="hidden md:block">Focus</span></div>
                     </div>
 
                     <div class="mt-4 px-3 space-y-1">
-                        <div class="sidebar-item text-purple-400"><i data-lucide="message-circle" size="18"></i> <span class="hidden md:block">Contacto</span></div>
-                        <div class="sidebar-item text-yellow-500"><i data-lucide="heart" size="18"></i> <span class="hidden md:block">Ayuda al Creador</span></div>
-                        
+                        <div class="sidebar-item text-purple-400"><i data-lucide="message-circle" size="18"></i> <span
+                                class="hidden md:block">Contacto</span></div>
+                        <div class="sidebar-item text-yellow-500"><i data-lucide="heart" size="18"></i> <span
+                                class="hidden md:block">Ayuda al Creador</span></div>
+
                         <div class="mt-4 pt-4 border-t border-gray-800 flex items-center gap-3 px-3">
-                            <div class="w-8 h-8 rounded-full bg-gray-700 border border-gray-600 flex items-center justify-center text-lg">🐵</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-gray-700 border border-gray-600 flex items-center justify-center text-lg">
+                                🐵</div>
                             <div class="hidden md:block">
                                 <p class="text-xs font-bold text-white">Nico</p>
                                 <p class="text-[10px] text-gray-500">Ingeniería en Sistemas</p>
@@ -192,19 +244,25 @@
                 <div class="flex-1 bg-[#020617] p-8 flex flex-col relative overflow-hidden">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
                         <div>
-                            <h2 class="text-3xl font-bold text-white flex items-center gap-2">Hola, Nico <span class="text-2xl">👋</span></h2>
+                            <h2 class="text-3xl font-bold text-white flex items-center gap-2">Hola, Nico <span
+                                    class="text-2xl">👋</span></h2>
                             <p class="text-gray-400 text-sm mt-1">Aquí tienes tu resumen al día.</p>
                         </div>
-                        
+
                         <div class="flex gap-4">
-                            <div class="bg-[#0F172A] border border-yellow-600/30 rounded-lg p-3 w-64 relative overflow-hidden">
+                            <div
+                                class="bg-[#0F172A] border border-yellow-600/30 rounded-lg p-3 w-64 relative overflow-hidden">
                                 <div class="flex justify-between items-start relative z-10">
                                     <div>
-                                        <p class="text-[10px] text-yellow-500 font-bold uppercase flex items-center gap-1"><i data-lucide="zap" size="10"></i> Nivel 70</p>
+                                        <p
+                                            class="text-[10px] text-yellow-500 font-bold uppercase flex items-center gap-1">
+                                            <i data-lucide="zap" size="10"></i> Nivel 70
+                                        </p>
                                         <p class="text-sm font-bold text-white">Ingeniero Especialista</p>
                                     </div>
                                     <div class="text-right">
-                                        <i data-lucide="trophy" class="text-yellow-500/20 w-8 h-8 absolute top-0 right-0"></i>
+                                        <i data-lucide="trophy"
+                                            class="text-yellow-500/20 w-8 h-8 absolute top-0 right-0"></i>
                                         <p class="text-[10px] text-gray-400 font-mono mt-1">3663 / 16372 XP</p>
                                     </div>
                                 </div>
@@ -213,7 +271,8 @@
                                 </div>
                             </div>
 
-                            <div class="bg-[#0F172A] border border-blue-900/30 rounded-lg p-3 w-40 flex items-center justify-between relative overflow-hidden">
+                            <div
+                                class="bg-[#0F172A] border border-blue-900/30 rounded-lg p-3 w-40 flex items-center justify-between relative overflow-hidden">
                                 <div>
                                     <p class="text-[10px] text-blue-400 font-bold uppercase">Tu Avance</p>
                                     <p class="text-2xl font-bold text-white">33%</p>
@@ -221,8 +280,12 @@
                                 </div>
                                 <div class="relative w-10 h-10">
                                     <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
-                                        <path class="text-gray-800" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" />
-                                        <path class="text-blue-500" stroke-dasharray="33, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" />
+                                        <path class="text-gray-800"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            fill="none" stroke="currentColor" stroke-width="4" />
+                                        <path class="text-blue-500" stroke-dasharray="33, 100"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            fill="none" stroke="currentColor" stroke-width="4" />
                                     </svg>
                                 </div>
                             </div>
@@ -230,20 +293,25 @@
                     </div>
 
                     <div class="flex flex-col md:flex-row gap-6 mb-6 h-auto md:h-64">
-                        <div class="flex-[2] bg-gradient-to-br from-blue-900/10 to-[#0F172A] border border-blue-500/20 rounded-xl p-6 relative overflow-hidden flex flex-col justify-between">
+                        <div
+                            class="flex-[2] bg-gradient-to-br from-blue-900/10 to-[#0F172A] border border-blue-500/20 rounded-xl p-6 relative overflow-hidden flex flex-col justify-between">
                             <i data-lucide="calendar" class="absolute top-8 right-8 text-white/5 w-40 h-40"></i>
-                            
+
                             <div class="relative z-10">
-                                <p class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Próximos Exámenes</p>
+                                <p class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Próximos
+                                    Exámenes</p>
                                 <h3 class="text-3xl font-bold text-white mb-1">Final Sistemas Operativos</h3>
                                 <p class="text-lg text-gray-400 font-light">Sistemas Operativos</p>
-                                <div class="mt-4 inline-block bg-blue-900/30 border border-blue-500/30 rounded px-3 py-1 text-xs font-bold text-blue-200 uppercase">
+                                <div
+                                    class="mt-4 inline-block bg-blue-900/30 border border-blue-500/30 rounded px-3 py-1 text-xs font-bold text-blue-200 uppercase">
                                     Martes, 16 de Diciembre
                                 </div>
                             </div>
 
                             <div class="relative z-10 flex items-end justify-between mt-4 md:mt-0">
-                                <button class="w-full md:w-auto px-6 py-2 bg-[#1E293B] hover:bg-gray-700 text-gray-300 text-sm font-bold rounded-lg border border-gray-600 transition-colors">Ver Exámenes</button>
+                                <button
+                                    class="w-full md:w-auto px-6 py-2 bg-[#1E293B] hover:bg-gray-700 text-gray-300 text-sm font-bold rounded-lg border border-gray-600 transition-colors">Ver
+                                    Exámenes</button>
                                 <div class="text-right hidden md:block">
                                     <p class="text-xs text-gray-500">Faltan</p>
                                     <p class="text-4xl font-bold text-red-500">2</p>
@@ -254,10 +322,13 @@
 
                         <div class="flex-1 bg-[#0F172A] border border-gray-800 rounded-xl p-5 flex flex-col">
                             <div class="flex justify-between items-center mb-4">
-                                <h3 class="font-bold text-white flex items-center gap-2"><i data-lucide="message-circle" size="18"></i> Mensajes</h3>
-                                <span class="bg-gray-800 border border-gray-700 text-xs px-2 py-0.5 rounded text-gray-300">2 Nuevos</span>
+                                <h3 class="font-bold text-white flex items-center gap-2"><i data-lucide="message-circle"
+                                        size="18"></i> Mensajes</h3>
+                                <span
+                                    class="bg-gray-800 border border-gray-700 text-xs px-2 py-0.5 rounded text-gray-300">2
+                                    Nuevos</span>
                             </div>
-                            
+
                             <div class="flex-1 flex flex-col justify-center">
                                 <div class="bg-black/20 p-4 rounded-lg border border-gray-700/50 relative">
                                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-lg"></div>
@@ -268,8 +339,9 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <button class="w-full mt-4 bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2">
+
+                            <button
+                                class="w-full mt-4 bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2">
                                 Ver Mensaje <i data-lucide="arrow-right" size="14"></i>
                             </button>
                         </div>
@@ -277,27 +349,39 @@
 
                     <div class="flex flex-col md:flex-row gap-6 h-auto md:h-48">
                         <div class="flex-1 grid grid-cols-2 gap-3">
-                            <div class="bg-[#0F172A] border border-blue-500/30 rounded-xl p-3 flex flex-col justify-between">
-                                <div class="flex items-center gap-2 text-blue-400 text-[10px] font-bold uppercase"><i data-lucide="book-open" size="12"></i> Cursando</div>
+                            <div
+                                class="bg-[#0F172A] border border-blue-500/30 rounded-xl p-3 flex flex-col justify-between">
+                                <div class="flex items-center gap-2 text-blue-400 text-[10px] font-bold uppercase"><i
+                                        data-lucide="book-open" size="12"></i> Cursando</div>
                                 <p class="text-2xl font-bold text-white text-right">2</p>
                             </div>
-                            <div class="bg-[#0F172A] border border-orange-500/30 rounded-xl p-3 flex flex-col justify-between">
-                                <div class="flex items-center gap-2 text-orange-400 text-[10px] font-bold uppercase leading-tight"><i data-lucide="alert-circle" size="12"></i> Finales <br>Pendientes</div>
+                            <div
+                                class="bg-[#0F172A] border border-orange-500/30 rounded-xl p-3 flex flex-col justify-between">
+                                <div
+                                    class="flex items-center gap-2 text-orange-400 text-[10px] font-bold uppercase leading-tight">
+                                    <i data-lucide="alert-circle" size="12"></i> Finales <br>Pendientes
+                                </div>
                                 <p class="text-2xl font-bold text-white text-right">1</p>
                             </div>
-                            <div class="bg-[#0F172A] border border-green-500/30 rounded-xl p-3 flex flex-col justify-between">
-                                <div class="flex items-center gap-2 text-green-400 text-[10px] font-bold uppercase"><i data-lucide="check-circle" size="12"></i> Aprobadas</div>
+                            <div
+                                class="bg-[#0F172A] border border-green-500/30 rounded-xl p-3 flex flex-col justify-between">
+                                <div class="flex items-center gap-2 text-green-400 text-[10px] font-bold uppercase"><i
+                                        data-lucide="check-circle" size="12"></i> Aprobadas</div>
                                 <p class="text-2xl font-bold text-white text-right">13</p>
                             </div>
-                            <div class="bg-[#0F172A] border border-purple-500/30 rounded-xl p-3 flex flex-col justify-between">
-                                <div class="flex items-center gap-2 text-purple-400 text-[10px] font-bold uppercase"><i data-lucide="trending-up" size="12"></i> Promedio</div>
+                            <div
+                                class="bg-[#0F172A] border border-purple-500/30 rounded-xl p-3 flex flex-col justify-between">
+                                <div class="flex items-center gap-2 text-purple-400 text-[10px] font-bold uppercase"><i
+                                        data-lucide="trending-up" size="12"></i> Promedio</div>
                                 <p class="text-2xl font-bold text-white text-right">8.17</p>
                             </div>
                         </div>
 
                         <div class="flex-1 bg-[#0F172A] border border-gray-800 rounded-xl p-4 flex flex-col">
-                            <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2"><i data-lucide="clock" size="14" class="text-blue-400"></i> Próximas Tareas</h4>
-                            <div class="bg-gray-900/50 border border-gray-700/50 rounded p-2 flex justify-between items-center mb-auto">
+                            <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2"><i data-lucide="clock"
+                                    size="14" class="text-blue-400"></i> Próximas Tareas</h4>
+                            <div
+                                class="bg-gray-900/50 border border-gray-700/50 rounded p-2 flex justify-between items-center mb-auto">
                                 <div class="flex items-center gap-2">
                                     <div class="w-1 h-8 bg-gray-600 rounded"></div>
                                     <div>
@@ -307,21 +391,25 @@
                                 </div>
                                 <span class="text-[10px] text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded">19 DIC</span>
                             </div>
-                            <button class="w-full mt-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                            <button
+                                class="w-full mt-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
                                 <i data-lucide="plus" size="12"></i> Crear nueva tarea
                             </button>
                         </div>
 
                         <div class="flex-1 bg-[#0F172A] border border-gray-800 rounded-xl p-4 flex flex-col">
-                            <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2"><i data-lucide="target" size="14" class="text-emerald-400"></i> Próximos Objetivos</h4>
-                            <div class="bg-gray-900/50 border border-gray-700/50 rounded p-2 flex items-center gap-2 mb-auto">
+                            <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2"><i
+                                    data-lucide="target" size="14" class="text-emerald-400"></i> Próximos Objetivos</h4>
+                            <div
+                                class="bg-gray-900/50 border border-gray-700/50 rounded p-2 flex items-center gap-2 mb-auto">
                                 <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
                                 <div>
                                     <p class="text-xs font-bold text-white">Leer libro Año del Desierto</p>
                                     <p class="text-[10px] text-gray-500">Vence el 20 dic</p>
                                 </div>
                             </div>
-                            <button class="w-full mt-2 bg-emerald-600 hover:bg-emerald-500 text-white py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                            <button
+                                class="w-full mt-2 bg-emerald-600 hover:bg-emerald-500 text-white py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
                                 <i data-lucide="plus" size="12"></i> Crear nuevo objetivo
                             </button>
                         </div>
@@ -341,25 +429,34 @@
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Estudiar ahora es un juego</h2>
                     <p class="text-gray-400 text-lg mb-6 leading-relaxed">
-                        Convierte tu progreso académico en una experiencia RPG. Gana experiencia (XP) completando tareas, aprobando parciales y manteniendo tu asistencia.
+                        Convierte tu progreso académico en una experiencia RPG. Gana experiencia (XP) completando
+                        tareas, aprobando parciales y manteniendo tu asistencia.
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-xs">1</div>
-                            <span class="text-gray-300">Desbloquea <strong>Avatares</strong> únicos al subir de nivel.</span>
+                            <div
+                                class="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-xs">
+                                1</div>
+                            <span class="text-gray-300">Desbloquea <strong>Avatares</strong> únicos al subir de
+                                nivel.</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">2</div>
+                            <div
+                                class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">
+                                2</div>
                             <span class="text-gray-300">Consigue títulos como <em>"Veterano de la Cursada"</em>.</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 font-bold text-xs">3</div>
+                            <div
+                                class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 font-bold text-xs">
+                                3</div>
                             <span class="text-gray-300">Visualiza tu progreso con barras de XP reales.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="flex-1 relative" data-aos="fade-left">
-                    <div class="absolute top-0 right-10 bg-gray-800 p-4 rounded-xl border border-yellow-500/30 shadow-xl z-10 animate-bounce" style="animation-duration: 3s;">
+                    <div class="absolute top-0 right-10 bg-gray-800 p-4 rounded-xl border border-yellow-500/30 shadow-xl z-10 animate-bounce"
+                        style="animation-duration: 3s;">
                         <div class="text-center">
                             <div class="text-3xl mb-1">🦁</div>
                             <div class="text-xs font-bold text-yellow-500 uppercase">Nivel 10</div>
@@ -367,7 +464,9 @@
                     </div>
                     <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl relative overflow-hidden">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-16 h-16 rounded-full bg-gray-800 border-2 border-blue-500 flex items-center justify-center text-3xl">🦊</div>
+                            <div
+                                class="w-16 h-16 rounded-full bg-gray-800 border-2 border-blue-500 flex items-center justify-center text-3xl">
+                                🦊</div>
                             <div class="flex-1">
                                 <div class="flex justify-between mb-1">
                                     <span class="font-bold">Novato Universitario</span>
@@ -379,12 +478,16 @@
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <div class="flex items-center justify-between text-sm p-2 bg-gray-800/50 rounded border border-gray-700">
-                                <span class="text-gray-300 flex items-center gap-2"><i data-lucide="check-circle" size="14" class="text-green-500"></i> Tarea completada</span>
+                            <div
+                                class="flex items-center justify-between text-sm p-2 bg-gray-800/50 rounded border border-gray-700">
+                                <span class="text-gray-300 flex items-center gap-2"><i data-lucide="check-circle"
+                                        size="14" class="text-green-500"></i> Tarea completada</span>
                                 <span class="text-yellow-400 font-bold text-xs">+20 XP</span>
                             </div>
-                            <div class="flex items-center justify-between text-sm p-2 bg-gray-800/50 rounded border border-gray-700">
-                                <span class="text-gray-300 flex items-center gap-2"><i data-lucide="book-open" size="14" class="text-blue-500"></i> Final aprobado</span>
+                            <div
+                                class="flex items-center justify-between text-sm p-2 bg-gray-800/50 rounded border border-gray-700">
+                                <span class="text-gray-300 flex items-center gap-2"><i data-lucide="book-open" size="14"
+                                        class="text-blue-500"></i> Final aprobado</span>
                                 <span class="text-yellow-400 font-bold text-xs">+500 XP</span>
                             </div>
                         </div>
@@ -396,96 +499,137 @@
 
     <section id="features" class="py-24 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4">
-            
+
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4">Todo lo que necesitas para aprobar</h2>
                 <p class="text-gray-400 text-lg">Olvídate de Excel, Notion y el bloc de notas. Todo está aquí.</p>
             </div>
 
             <div class="mb-16">
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="book-open" class="text-blue-500"></i> Gestión Académica</h3>
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="book-open"
+                        class="text-blue-500"></i> Gestión Académica</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
+
                     <div class="feature-card p-6 rounded-2xl">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400"><i data-lucide="target"></i></div>
+                            <div
+                                class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">
+                                <i data-lucide="target"></i>
+                            </div>
                             <h4 class="font-bold text-lg">Control de Materias</h4>
                         </div>
-                        <p class="text-gray-400 text-sm">Gestiona estados (Cursando, Final Pendiente, Aprobada). Controla tu <strong>asistencia</strong>, notas y promedio con aplazos en tiempo real.</p>
+                        <p class="text-gray-400 text-sm">Gestiona estados (Cursando, Final Pendiente, Aprobada).
+                            Controla tu <strong>asistencia</strong>, notas y promedio con aplazos en tiempo real.</p>
                     </div>
 
                     <div class="feature-card p-6 rounded-2xl">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400"><i data-lucide="clipboard-list"></i></div>
+                            <div
+                                class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400">
+                                <i data-lucide="clipboard-list"></i>
+                            </div>
                             <h4 class="font-bold text-lg">Exámenes y Entregas</h4>
                         </div>
-                        <p class="text-gray-400 text-sm">Agenda tus parciales. Visualiza la cuenta regresiva en el Dashboard y anota los temas que entran en cada evaluación.</p>
+                        <p class="text-gray-400 text-sm">Agenda tus parciales. Visualiza la cuenta regresiva en el
+                            Dashboard y anota los temas que entran en cada evaluación.</p>
                     </div>
 
                     <div class="feature-card p-6 rounded-2xl">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400"><i data-lucide="calendar"></i></div>
+                            <div
+                                class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400">
+                                <i data-lucide="calendar"></i>
+                            </div>
                             <h4 class="font-bold text-lg">Cronograma Visual</h4>
                         </div>
-                        <p class="text-gray-400 text-sm">Visualiza tus horarios de cursada semanal tipo grilla y un calendario mensual con carruseles interactivos.</p>
+                        <p class="text-gray-400 text-sm">Visualiza tus horarios de cursada semanal tipo grilla y un
+                            calendario mensual con carruseles interactivos.</p>
                     </div>
 
                     <div class="feature-card p-6 rounded-2xl border-l-4 border-l-blue-500">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400"><i data-lucide="share-2"></i></div>
-                            <h4 class="font-bold text-lg leading-tight">Compartir <br>Materias <span class="bg-blue-500/20 text-blue-400 text-[10px] px-2 py-0.5 rounded border border-blue-500/30 uppercase ml-1 relative top-[-2px]">Nuevo</span></h4>
+                            <div
+                                class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400">
+                                <i data-lucide="share-2"></i>
+                            </div>
+                            <h4 class="font-bold text-lg leading-tight">Compartir <br>Materias <span
+                                    class="bg-blue-500/20 text-blue-400 text-[10px] px-2 py-0.5 rounded border border-blue-500/30 uppercase ml-1 relative top-[-2px]">Nuevo</span>
+                            </h4>
                         </div>
-                        <p class="text-gray-400 text-sm">Exporta tu cursada completa (horarios, links, tareas y exámenes) mediante un código corto y compártelo con tus compañeros.</p>
+                        <p class="text-gray-400 text-sm">Exporta tu cursada completa (horarios, links, tareas y
+                            exámenes) mediante un código corto y compártelo con tus compañeros.</p>
                     </div>
 
                 </div>
             </div>
 
             <div class="mb-16">
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="zap" class="text-yellow-500"></i> Productividad Focus</h3>
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="zap"
+                        class="text-yellow-500"></i> Productividad Focus</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
+
                     <div class="feature-card p-6 rounded-2xl border-l-4 border-l-yellow-500">
                         <div class="flex justify-between items-start mb-4">
-                            <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400"><i data-lucide="check-circle"></i></div>
-                            <span class="text-xs font-bold text-gray-500 bg-gray-800 px-2 py-1 rounded border border-gray-700">KANBAN</span>
+                            <div
+                                class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center text-yellow-400">
+                                <i data-lucide="check-circle"></i>
+                            </div>
+                            <span
+                                class="text-xs font-bold text-gray-500 bg-gray-800 px-2 py-1 rounded border border-gray-700">KANBAN</span>
                         </div>
                         <h4 class="font-bold text-lg mb-2">Gestor de Tareas Drag & Drop</h4>
-                        <p class="text-gray-400 text-sm">Organiza tus pendientes. Arrastra tarjetas y <strong>limpia las completadas con el nuevo botón de purga</strong>. Siente la satisfacción del nuevo efecto de sonido al terminar.</p>
+                        <p class="text-gray-400 text-sm">Organiza tus pendientes. Arrastra tarjetas y <strong>limpia las
+                                completadas con el nuevo botón de purga</strong>. Siente la satisfacción del nuevo
+                            efecto de sonido al terminar.</p>
                     </div>
 
                     <div class="feature-card p-6 rounded-2xl border-l-4 border-l-red-500">
                         <div class="flex justify-between items-start mb-4">
-                            <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400"><i data-lucide="clock"></i></div>
-                            <span class="text-xs font-bold text-gray-500 bg-gray-800 px-2 py-1 rounded border border-gray-700">PiP MODE</span>
+                            <div
+                                class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center text-red-400">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <span
+                                class="text-xs font-bold text-gray-500 bg-gray-800 px-2 py-1 rounded border border-gray-700">PiP
+                                MODE</span>
                         </div>
                         <h4 class="font-bold text-lg mb-2">Pomodoro Flotante</h4>
-                        <p class="text-gray-400 text-sm">Estudia sin distraerte. El temporizador se puede desacoplar en una mini-ventana que flota sobre tus apuntes o PDFs mientras estudias.</p>
+                        <p class="text-gray-400 text-sm">Estudia sin distraerte. El temporizador se puede desacoplar en
+                            una mini-ventana que flota sobre tus apuntes o PDFs mientras estudias.</p>
                     </div>
 
                 </div>
             </div>
 
             <div id="social">
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="users" class="text-indigo-400"></i> Comunidad y Grupos <span class="bg-indigo-500/20 text-indigo-300 text-[10px] px-2 py-0.5 rounded border border-indigo-500/30 uppercase">Sincronizado</span></h3>
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="users"
+                        class="text-indigo-400"></i> Comunidad y Grupos <span
+                        class="bg-indigo-500/20 text-indigo-300 text-[10px] px-2 py-0.5 rounded border border-indigo-500/30 uppercase">Sincronizado</span>
+                </h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
+
                     <div class="feature-card p-6 rounded-2xl group hover:border-indigo-500">
-                        <div class="mb-4 text-indigo-400 group-hover:scale-110 transition-transform"><i data-lucide="coffee" size="32"></i></div>
+                        <div class="mb-4 text-indigo-400 group-hover:scale-110 transition-transform"><i
+                                data-lucide="coffee" size="32"></i></div>
                         <h4 class="font-bold text-lg text-white mb-2">Grupos de Estudio</h4>
-                        <p class="text-gray-400 text-sm">Crea o únete a grupos privados mediante ID. Chatea en tiempo real con tus compañeros de cursada con una interfaz renovada.</p>
+                        <p class="text-gray-400 text-sm">Crea o únete a grupos privados mediante ID. Chatea en tiempo
+                            real con tus compañeros de cursada con una interfaz renovada.</p>
                     </div>
 
                     <div class="feature-card p-6 rounded-2xl group hover:border-pink-500">
-                        <div class="mb-4 text-pink-400 group-hover:scale-110 transition-transform"><i data-lucide="search" size="32"></i></div>
+                        <div class="mb-4 text-pink-400 group-hover:scale-110 transition-transform"><i
+                                data-lucide="search" size="32"></i></div>
                         <h4 class="font-bold text-lg text-white mb-2">Buscador de Compañeros</h4>
-                        <p class="text-gray-400 text-sm">¿Te falta gente para el TP? Publica una búsqueda filtrando por universidad, carrera y materia.</p>
+                        <p class="text-gray-400 text-sm">¿Te falta gente para el TP? Publica una búsqueda filtrando por
+                            universidad, carrera y materia.</p>
                     </div>
 
                     <div class="feature-card p-6 rounded-2xl group hover:border-green-500">
-                        <div class="mb-4 text-green-400 group-hover:scale-110 transition-transform"><i data-lucide="folder-down" size="32"></i></div>
+                        <div class="mb-4 text-green-400 group-hover:scale-110 transition-transform"><i
+                                data-lucide="folder-down" size="32"></i></div>
                         <h4 class="font-bold text-lg text-white mb-2">Recursos Compartidos</h4>
-                        <p class="text-gray-400 text-sm">Accede a una biblioteca comunitaria de resúmenes y exámenes pasados subidos por otros estudiantes.</p>
+                        <p class="text-gray-400 text-sm">Accede a una biblioteca comunitaria de resúmenes y exámenes
+                            pasados subidos por otros estudiantes.</p>
                     </div>
 
                 </div>
@@ -494,31 +638,31 @@
             <div class="mt-16 pt-10 border-t border-gray-800">
                 <h3 class="text-xl font-bold text-white mb-6 text-center">Tecnología diseñada para estudiantes</h3>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                    
+
                     <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
                         <i data-lucide="sparkles" class="mx-auto mb-2 text-emerald-400"></i>
                         <h4 class="font-bold text-sm">Onboarding</h4>
                         <p class="text-xs text-gray-500 mt-1">Tutorial interactivo</p>
                     </div>
-                    
+
                     <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
                         <i data-lucide="wifi-off" class="mx-auto mb-2 text-gray-400"></i>
                         <h4 class="font-bold text-sm">Offline First</h4>
                         <p class="text-xs text-gray-500 mt-1">Funciona sin internet</p>
                     </div>
-                    
+
                     <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
                         <i data-lucide="cloud" class="mx-auto mb-2 text-blue-400"></i>
                         <h4 class="font-bold text-sm">Sync Opcional</h4>
                         <p class="text-xs text-gray-500 mt-1">Respaldo en la Nube</p>
                     </div>
-                    
+
                     <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
                         <i data-lucide="volume-2" class="mx-auto mb-2 text-purple-400"></i>
                         <h4 class="font-bold text-sm">Feedback</h4>
                         <p class="text-xs text-gray-500 mt-1">Efectos de sonido</p>
                     </div>
-                    
+
                     <div class="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700">
                         <i data-lucide="bell" class="mx-auto mb-2 text-yellow-400"></i>
                         <h4 class="font-bold text-sm">Alertas</h4>
@@ -535,67 +679,119 @@
         <div class="absolute inset-0 bg-blue-900/10"></div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Tu semestre, bajo control.</h2>
-            <p class="text-xl text-gray-400 mb-10">Disponible para Mac, Windows y Linux. Gratis y hecho por un estudiante para estudiantes.</p>
-            
-            <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-8">
-                
-                <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.2.8/UniStation.Setup.1.2.8.exe" class="group relative px-8 py-4 bg-blue-600 text-white font-bold rounded-full text-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:bg-blue-500 transition-all hover:scale-105 w-full sm:w-auto flex justify-center">
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="monitor" class="text-white"></i>
-                        <span>Descargar para Windows</span>
-                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform hidden sm:block"></i>
+            <p class="text-xl text-gray-400 mb-10">Disponible para Mac, Windows y Linux. Gratis y hecho por un
+                estudiante para estudiantes.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-left max-w-5xl mx-auto">
+
+
+                <div class="flex flex-col gap-3">
+                    <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.2.8/UniStation.Setup.1.2.8.exe"
+                        class="group relative px-8 py-4 bg-blue-600 text-white font-bold rounded-xl text-lg shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:bg-blue-500 transition-all hover:scale-105 w-full flex justify-center items-center">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="monitor" class="text-white"></i>
+                            <span>Windows</span>
+                            <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                    <div
+                        class="p-5 bg-yellow-900/20 border border-yellow-700/30 rounded-xl flex-1 flex flex-col items-start gap-2">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-alert" class="text-yellow-500 w-5 h-5"></i>
+                            <p class="text-sm font-bold text-yellow-500">Aviso para usuarios de Windows</p>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed mt-1">
+                            Puede aparecer una pantalla de <strong>Windows SmartScreen</strong> ("Windows protegió su
+                            PC"). Solo haz clic en <strong class="text-white">"Más información"</strong> y luego en
+                            <strong class="text-white">"Ejecutar de todas formas"</strong>. Es 100% seguro.
+                        </p>
                     </div>
-                </a>
-
-                <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.2.8/UniStation.Setup.1.2.8.dmg" class="group relative px-8 py-4 bg-gray-200 text-gray-900 font-bold rounded-full text-lg shadow-lg hover:bg-white hover:shadow-white/20 transition-all hover:scale-105 w-full sm:w-auto flex justify-center">
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="apple" class="text-gray-900"></i>
-                        <span>Descargar para Mac</span>
-                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform hidden sm:block"></i>
-                    </div>
-                </a>
-
-                <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.2.8/UniStation.AppImage" class="group relative px-8 py-4 bg-gray-800 border border-gray-700 text-white font-bold rounded-full text-lg shadow-lg hover:bg-gray-700 hover:border-gray-500 transition-all hover:scale-105 w-full sm:w-auto flex justify-center">
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="terminal" class="text-white"></i>
-                        <span>Descargar para Linux</span>
-                        <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform hidden sm:block"></i>
-                    </div>
-                </a>
-
-            </div>
-
-            <div class="mt-6 p-5 bg-yellow-900/20 border border-yellow-700/30 rounded-xl max-w-2xl mx-auto text-left flex flex-col sm:flex-row items-start gap-4">
-                <i data-lucide="shield-alert" class="text-yellow-500 shrink-0 sm:mt-0.5"></i>
-                <div>
-                    <p class="text-sm font-bold text-yellow-500 mb-1">Aviso para usuarios de Windows</p>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Al instalar la app, es posible que aparezca una pantalla azul de <strong>Windows SmartScreen</strong> diciendo "Windows protegió su PC". Esto sucede porque los certificados de verificación oficial cuestan cientos de dólares y este es un proyecto independiente.
-                        <br><br>
-                        Solo haz clic en <strong class="text-white">"Más información"</strong> y luego en <strong class="text-white">"Ejecutar de todas formas"</strong>. Es 100% seguro.
-                    </p>
                 </div>
+
+
+                <div class="flex flex-col gap-3">
+                    <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.2.8/UniStation.Setup.1.2.8.dmg"
+                        class="group relative px-8 py-4 bg-gray-200 text-gray-900 font-bold rounded-xl text-lg shadow-lg hover:bg-white hover:shadow-white/20 transition-all hover:scale-105 w-full flex justify-center items-center">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="apple" class="text-gray-900"></i>
+                            <span>Mac</span>
+                            <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                    <div
+                        class="p-5 bg-blue-900/20 border border-blue-700/30 rounded-xl flex-1 flex flex-col items-start gap-2">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="info" class="text-blue-500 w-5 h-5"></i>
+                            <p class="text-sm font-bold text-blue-400">Aviso para usuarios de Mac</p>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed mt-1">
+                            Si macOS dice que <strong class="text-white">"la app está dañada"</strong>:<br>
+                            1. Mueve la app a <strong>Aplicaciones</strong>.<br>
+                            2. Abre <strong>Terminal</strong> y pega:<br>
+                            <code
+                                class="bg-gray-900 px-2 py-1 rounded text-blue-300 mt-1 mb-1 inline-block select-all font-mono border border-gray-700 text-[10px] w-full overflow-hidden text-ellipsis whitespace-nowrap"
+                                title="sudo xattr -rd com.apple.quarantine /Applications/UniStation.app">sudo xattr -rd com.apple.quarantine /Applications/UniStation.app</code><br>
+                            3. Presiona Enter y pon tu contraseña.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col gap-3">
+                    <a href="https://github.com/NicolasPetasne/UniStation/releases/download/V1.2.8/UniStation.AppImage"
+                        class="group relative px-8 py-4 bg-gray-800 border border-gray-700 text-white font-bold rounded-xl text-lg shadow-lg hover:bg-gray-700 hover:border-gray-500 transition-all hover:scale-105 w-full flex justify-center items-center">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="terminal" class="text-white"></i>
+                            <span>Linux</span>
+                            <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                    <div
+                        class="p-5 bg-gray-800/30 border border-gray-700/30 rounded-xl flex-1 flex flex-col items-start gap-2">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="info" class="text-gray-400 w-5 h-5"></i>
+                            <p class="text-sm font-bold text-gray-400">Usuarios de Linux (AppImage)</p>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed mt-1">
+                            Una vez descargado el archivo <strong>.AppImage</strong>, haz clic derecho sobre él, ve a
+                            <strong>Propiedades</strong> y asegúrate de marcar la opción <strong>"Permitir ejecutar el
+                                archivo como un programa"</strong> antes de abrirlo.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col gap-3">
+                    <a href="https://unistationapp.vercel.app" target="_blank"
+                        class="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl text-lg shadow-lg shadow-purple-600/30 hover:shadow-purple-500/50 hover:from-purple-500 hover:to-indigo-500 transition-all hover:scale-105 w-full flex justify-center items-center">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="smartphone" class="text-white"></i>
+                            <span>Celular (PWA)</span>
+                            <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                    <div
+                        class="p-5 bg-purple-900/20 border border-purple-700/30 rounded-xl flex-1 flex flex-col items-start gap-2">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="smartphone" class="text-purple-500 w-5 h-5"></i>
+                            <p class="text-sm font-bold text-purple-400">Instalación en Celular</p>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed mt-1">
+                            <strong>iOS (Safari):</strong> Toca el icono <strong class="text-white">Compartir</strong> y
+                            luego <strong class="text-white">"Agregar a inicio"</strong>.<br>
+                            <strong>Android (Chrome):</strong> Toca los <strong class="text-white">tres puntos</strong>
+                            ⋮ y luego <strong class="text-white">"Instalar aplicación"</strong>.
+                        </p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="mt-4 p-5 bg-blue-900/20 border border-blue-700/30 rounded-xl max-w-2xl mx-auto text-left flex flex-col sm:flex-row items-start gap-4">
-                <i data-lucide="info" class="text-blue-500 shrink-0 sm:mt-0.5"></i>
-                <div>
-                    <p class="text-sm font-bold text-blue-400 mb-1">Aviso para usuarios de Mac</p>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Es posible que macOS te muestre un error diciendo que <strong class="text-white">"la app está dañada"</strong>. Esto es una protección normal de Apple para apps que no se publican en su tienda oficial. Para solucionarlo:
-                        <br><br>
-                        1. Move la app a tu carpeta de <strong class="text-white">Aplicaciones</strong>.<br>
-                        2. Abrí la <strong class="text-white">Terminal</strong> y pega este comando:<br>
-                        <code class="bg-gray-900 px-2 py-1.5 rounded text-blue-300 mt-2 mb-2 inline-block select-all font-mono border border-gray-700 w-full overflow-x-auto">sudo xattr -rd com.apple.quarantine /Applications/UniStation.app</code><br>
-                        3. Presiona Enter, pon tu contraseña de Mac (no se verá mientras la escribís), ¡y listo! Ya podrás abrirla normalmente.
-                    </p>
-                </div>
-            </div>
-            
             <div class="flex items-center justify-center gap-4 text-sm text-gray-500 mt-8">
                 <span class="flex items-center gap-1"><i data-lucide="hard-drive" size="14"></i> 100% Local</span>
                 <span>•</span>
-                <span class="flex items-center gap-1"><i data-lucide="check" size="14"></i> Actualizaciones Automáticas</span>
+                <span class="flex items-center gap-1"><i data-lucide="check" size="14"></i> Actualizaciones
+                    Automáticas</span>
             </div>
 
             <div class="mt-16 p-6 bg-gray-900/50 border border-gray-800 rounded-2xl max-w-xl mx-auto">
@@ -604,9 +800,11 @@
                     <span class="font-bold">Proyecto mantenido por la comunidad</span>
                 </div>
                 <p class="text-sm text-gray-400 mb-4">
-                    Soy Nico. Creé esta app porque necesitaba orden en mi cursada. Si te sirve para aprobar, considera invitarme un café.
+                    Soy Nico. Creé esta app porque necesitaba orden en mi cursada. Si te sirve para aprobar, considera
+                    invitarme un café.
                 </p>
-                <a href="https://cafecito.app/nicopet" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-medium hover:underline">
+                <a href="https://cafecito.app/nicopet" target="_blank"
+                    class="text-blue-400 hover:text-blue-300 text-sm font-medium hover:underline">
                     Apoyar en Cafecito &rarr;
                 </a>
             </div>
@@ -631,4 +829,5 @@
         });
     </script>
 </body>
+
 </html>
